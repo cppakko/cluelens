@@ -1,0 +1,167 @@
+.dictionaryapi-entry {
+  padding: 14px 10px 12px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+.dictionaryapi-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.dictionaryapi-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.dictionaryapi-reading {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dictionaryapi-audio {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.dictionaryapi-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dictionaryapi-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #555);
+  background: color-mix(in srgb, var(--m3-surface-container-high, #f3f3f3) 88%, white);
+}
+
+.dictionaryapi-origin {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.dictionaryapi-origin-label {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--m3-primary, #245cff);
+}
+
+.dictionaryapi-origin-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dictionaryapi-senses {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+  text-align: left;
+}
+
+.dictionaryapi-sense {
+  padding-left: 12px;
+  border-left: 2px solid color-mix(in srgb, var(--m3-primary, #245cff) 25%, transparent);
+}
+
+.dictionaryapi-sense-pos {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--m3-primary, #245cff);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dictionaryapi-definition-list {
+  display: grid;
+  gap: 10px;
+}
+
+.dictionaryapi-definition-row {
+  display: flex;
+  gap: 10px;
+}
+
+.dictionaryapi-definition-index {
+  width: 18px;
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dictionaryapi-definition-content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.dictionaryapi-definition-block {
+  min-width: 0;
+  text-align: left;
+}
+
+.dictionaryapi-definition-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--m3-on-surface, #222);
+}
+
+.dictionaryapi-definition-example {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--m3-on-surface-variant, #666);
+  font-style: italic;
+}
+
+.dictionaryapi-definition-meta {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dictionaryapi-definition-meta-label {
+  color: var(--m3-on-surface, #222);
+}
+
+.dictionaryapi-attribution {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+  text-align: left;
+}
+
+.dictionaryapi-attribution a {
+  color: var(--m3-primary, #245cff);
+  text-decoration: none;
+}
+
+.dictionaryapi-attribution a:hover {
+  text-decoration: underline;
+}

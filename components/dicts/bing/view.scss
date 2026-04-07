@@ -1,0 +1,511 @@
+.bing-result {
+  padding: 15px;
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  color: var(--m3-on-surface, #333);
+  background: var(--m3-surface-container, #eeedf4);
+  text-align: left;
+}
+
+.bing-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bing-title {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--m3-on-surface, #333);
+}
+
+.bing-prons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bing-pron {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.bing-pron-lang {
+  color: var(--m3-on-surface-variant, #555);
+}
+
+.bing-content {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.bing-def-container {
+  margin: 12px 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.client_def_bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.client_def_title_bar {
+  width: 40px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.client_def_title,
+.client_def_title_web {
+  display: inline-block;
+  min-width: 24px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: var(--m3-outline, #999);
+  color: var(--m3-inverse-on-surface, #fff);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.client_def_title_web {
+  background: var(--m3-on-surface-variant, #666);
+}
+
+.client_def_list {
+  flex: 1;
+}
+
+.client_def_list_item {
+  margin-bottom: 6px;
+}
+
+.client_def_list_word_item {
+  margin-bottom: 4px;
+}
+
+.client_def_list_word_content {
+  color: var(--m3-on-surface, #333);
+}
+
+.client_def_list_word_bar {
+  display: block;
+}
+
+.client_word_change_bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.client_word_change {
+  font-weight: 600;
+  color: var(--m3-on-surface, #333);
+}
+
+.client_word_change_def {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.client_word_change_word {
+  color: var(--m3-primary, #0078d4);
+  cursor: pointer;
+}
+
+.bing-section {
+  margin-bottom: 18px;
+}
+
+.bing-section-content {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.bing-sentences-section {
+  margin-top: 18px;
+  border-top: 1px solid var(--m3-outline-variant, #eee);
+  padding-top: 12px;
+}
+
+.client_sentence_list {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.client_sentence_list_num {
+  width: 20px;
+  color: var(--m3-on-surface-variant, #666);
+  flex-shrink: 0;
+}
+
+.client_sentence_list1 {
+  flex: 1;
+}
+
+.client_sen_en {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.client_sen_cn {
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.client_sen_word {
+  color: var(--m3-on-surface, #333);
+}
+
+.client_sen_player_bar {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.client_sentence_list_player {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.client_icon_container {
+  display: flex;
+  align-items: center;
+}
+
+.client_bdsen_audio,
+.client_vote_like_o,
+.client_vote_dislike_o {
+  cursor: pointer;
+}
+
+.bing-right {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.bing-right-content {
+  padding-top: 10px;
+  text-align: left;
+}
+
+.bing-result :where(div, p, li, dd, dt, td, th) {
+  text-align: left;
+}
+
+.client_side_bar {
+  margin-bottom: 16px;
+}
+
+.client_side_title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--m3-on-surface, #333);
+  font-size: 14px;
+}
+
+.client_siderbar_list_title_bar {
+  margin-bottom: 6px;
+}
+
+.client_siderbar_list_title {
+  font-weight: 600;
+  color: var(--m3-on-surface, #333);
+}
+
+.client_siderbar_list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.client_siderbar_list_item {
+  line-height: 1.4;
+}
+
+.client_siderbar_list_word {
+  color: var(--m3-primary, #0078d4);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.client_siderbar_list_word:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: var(--m3-primary, #0078d4);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.newlxarea {
+  overflow: hidden
+}
+
+.headwordbar {
+  overflow: hidden;
+  width: 100%;
+  margin: 3px 0 10px 0
+}
+
+.headwordcon {
+  float: left
+}
+
+.pronbar {
+  float: left
+}
+
+.pronitem {
+  float: left;
+  white-space: nowrap
+}
+
+.headword {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Microsoft YaHei, SimSun;
+  margin-right: 20px;
+  float: left
+}
+
+.prontag {
+  color: var(--m3-on-surface-variant, #777);
+  font-size: 14px;
+  margin-right: 3px
+}
+
+.proncon {
+  color: var(--m3-on-surface-variant, #777);
+  font-size: 14px;
+  font-family: Segoe UI, Arial;
+  _font-family: Lucida Sans Unicode, sans-serif;
+  margin-right: 10px;
+  white-space: nowrap
+}
+
+.exampleswitch {
+  float: right
+}
+
+.hideexample {
+  display: none;
+}
+
+.defbar {
+  overflow: hidden
+}
+
+.defeachseg {
+  overflow: hidden
+}
+
+.defeachhead {
+  padding-bottom: 4px;
+  width: 100%
+}
+
+.defbtn {
+  overflow: hidden
+}
+
+.defopen,
+.defclose {
+  width: 19px;
+  height: 19px;
+  float: left;
+  cursor: pointer;
+  background-repeat: no-repeat
+}
+
+.defclose {
+  background-position: -63px 0
+}
+
+.defopen {
+  background-position: 0 0
+}
+
+.defsegcon {
+  margin-top: 6px;
+  margin-left: 20px;
+  overflow: hidden
+}
+
+.deflistseg {
+  overflow: hidden
+}
+
+.deflistitem {
+  margin-top: 5px
+}
+
+.defitemtitlebar {
+  overflow: hidden;
+  margin-bottom: 10px
+}
+
+.defnum {
+  color: var(--m3-outline, #aaa);
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Segoe UI, Arial;
+  float: left;
+  width: 20px
+}
+
+.defitemtitle {
+  color: var(--m3-primary, #06a);
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 20px
+}
+
+.itemname,
+.itmeval {
+  padding-right: 5px
+}
+
+.itemname,
+.examitemname {
+  font-family: Microsoft YaHei, SimSun
+}
+
+.itmeval,
+.examitmeval {
+  font-family: Segoe UI, Arial
+}
+
+.defitembar {
+  overflow: hidden;
+  margin-bottom: 10px
+}
+
+.defitem {
+  padding-left: 20px
+}
+
+.defgracon {
+  float: left
+}
+
+.defgra {
+  color: var(--m3-error, #c00);
+  font-size: 14px;
+  font-family: Segoe UI, Arial;
+  padding-right: 5px
+}
+
+.defitemcon {
+  overflow: hidden;
+  color: var(--m3-on-surface, #000);
+  font-size: 14px
+}
+
+.idombar {
+  border: 1px solid color-mix(in srgb, var(--m3-outline-variant, #ebebeb) 40%, transparent);
+  margin-bottom: 10px
+}
+
+.idomlabel {
+  width: 35px;
+  text-align: center;
+  color: var(--m3-inverse-on-surface, #fff);
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Segoe UI, Arial;
+  vertical-align: middle
+}
+
+.idomseg {
+  margin: 10px
+}
+
+.exambar,
+.examlistitem {
+  overflow: hidden;
+  _display: inline-block;
+  _padding-bottom: 3px
+}
+
+.point {
+  padding: 8px;
+  float: left
+}
+
+.pp {
+  width: 3px;
+  height: 3px;
+  background-repeat: no-repeat
+}
+
+.examitem {
+  overflow: hidden;
+  color: var(--m3-on-surface-variant, #777);
+  font-size: 14px;
+  margin-bottom: 5px;
+  _float: left
+}
+
+.examitemname,
+.examitmeval {
+  padding-right: 5px;
+  padding-top: 2px
+}
+
+.refbar {
+  overflow: hidden
+}
+
+.client_sen_en_word,
+.client_sen_cn_word {
+  cursor: pointer;
+  color: var(--m3-on-surface, #000)
+}
+
+.client_sen_en,
+.client_def_list_word_en {
+  font-size: 13px;
+  color: var(--m3-on-surface, #000);
+  font-family: Segoe UI, Arial;
+  font-weight: normal
+}
+
+a {
+  text-decoration: none
+}
+
+.defposcon {
+  width: 45px;
+  float: left;
+  margin-right: 5px
+}
+
+.defpos {
+  padding: 1px 3px;
+  color: var(--m3-inverse-on-surface, #fff);
+  font-family: Segoe UI, Arial;
+  font-size: 13px;
+  font-weight: bold
+}
+
+.defpos {
+  background-color: var(--m3-outline, #aaa)
+}

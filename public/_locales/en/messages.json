@@ -1,0 +1,11 @@
+{
+    "open_panel_description": {
+        "message": "Open main panel"
+    },
+    "ext_name": {
+        "message": "ClueLens BETA"
+    },
+    "ext_description": {
+        "message": "A powerful dictionary extension for language learners."
+    }
+}

@@ -1,0 +1,467 @@
+.zdic-entry {
+  padding: 14px 10px 12px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+.zdic-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.zdic-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.zdic-reading {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.zdic-source-link {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--m3-primary, #0b57d0);
+  text-decoration: none;
+}
+
+.zdic-source-link:hover {
+  text-decoration: underline;
+}
+
+.zdic-entry-img {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.zdic-tabs {
+  margin-top: 10px;
+  gap: 0;
+  text-align: left;
+}
+
+.zdic-tabs-list {
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px;
+  row-gap: 3px;
+}
+
+.zdic-tabs-trigger {
+  flex: 0 0 auto;
+  font-size: 12px;
+  padding: 3px 8px;
+  height: 28px;
+}
+
+.zdic-tab-content {
+  padding: 12px 4px 4px;
+  text-align: left;
+}
+
+.zdic-single-section {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.zdic-richtext {
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--m3-on-surface, #222);
+  word-break: break-word;
+  text-align: left;
+}
+
+.zdic-richtext :where(p, ul, ol, dl, table, blockquote) {
+  margin: 0 0 10px;
+}
+
+.zdic-richtext :where(p:last-child, ul:last-child, ol:last-child, dl:last-child, table:last-child, blockquote:last-child) {
+  margin-bottom: 0;
+}
+
+.zdic-richtext :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.zdic-richtext :where(div, p, span, li, dd, dt, td, th) {
+  text-align: left !important;
+}
+
+.zdic-richtext :where(dt) {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+  margin-top: 6px;
+}
+
+.zdic-richtext :where(dd) {
+  margin: 2px 0 4px 1.2em;
+  color: var(--m3-on-surface-variant, #555);
+}
+
+.zdic-richtext :where(strong, b) {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+}
+
+.zdic-richtext :where(em, i) {
+  font-style: italic;
+}
+
+.zdic-richtext :where(sup, sub) {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.zdic-richtext :where(sup) {
+  top: -0.5em;
+}
+
+.zdic-richtext :where(sub) {
+  bottom: -0.25em;
+}
+
+.zdic-richtext :where(ruby) {
+  ruby-align: center;
+}
+
+.zdic-richtext :where(rt) {
+  font-size: 0.65em;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.zdic-richtext :where(hr) {
+  border: none;
+  border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+  margin: 8px 0;
+}
+
+.zdic-richtext :where(table) {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.zdic-richtext :where(td, th) {
+  padding: 4px 6px;
+  vertical-align: top;
+  border: 1px solid color-mix(in srgb, var(--m3-outline-variant, #cac4d0) 80%, transparent);
+}
+
+.zdic-richtext :where(th) {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--m3-surface-container-high, #ece6f0) 60%, transparent);
+}
+
+.zdic-richtext :where(img) {
+  max-width: 100%;
+  height: auto;
+}
+
+.zdic-richtext :where(a) {
+  color: var(--m3-primary, #0b57d0);
+  text-decoration: none;
+  border-bottom: dashed 1px color-mix(in srgb, var(--m3-on-surface) 25%, transparent);
+}
+
+.zdic-richtext :where(a:hover) {
+  color: var(--m3-tertiary, #f9690e);
+  border-bottom-color: color-mix(in srgb, var(--m3-tertiary) 50%, transparent);
+}
+
+.zdic-richtext :where(blockquote) {
+  padding: 6px 12px;
+  border-left: 3px solid var(--m3-outline-variant, #cac4d0);
+  color: var(--m3-on-surface-variant, #666);
+}
+
+/* ── zdic.net 原生段落缩进 ── */
+.zdic-richtext p {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.zdic-richtext .cino {
+  margin-left: 0;
+}
+
+/* ── 字头/拼音行 ── */
+.zdic-richtext .dicpy {
+  font-family: Arial, sans-serif;
+  color: var(--m3-tertiary, #f9690e);
+  font-size: 1.2em;
+}
+
+.zdic-richtext .pz {
+  border-bottom: 1px dashed color-mix(in srgb, var(--m3-outline) 30%, transparent);
+  padding-bottom: 5px;
+}
+
+/* ── ruby 注音（旧版 rbc/rtc 双行结构） ── */
+.zdic-richtext ruby {
+  display: inline-table;
+  text-align: center;
+  white-space: nowrap;
+  text-indent: 0;
+  margin: 0;
+  vertical-align: -20%;
+}
+
+.zdic-richtext ruby>rb,
+.zdic-richtext ruby>rbc {
+  display: table-row-group;
+  line-height: 90%;
+}
+
+.zdic-richtext ruby>rt,
+.zdic-richtext ruby>rbc+rtc {
+  display: table-header-group;
+  font-size: 60%;
+  line-height: 40%;
+  letter-spacing: 0;
+  color: var(--m3-tertiary, #8f6652);
+}
+
+.zdic-richtext ruby>rbc+rtc+rtc {
+  display: table-footer-group;
+  font-size: 60%;
+  line-height: 40%;
+  letter-spacing: 0;
+}
+
+.zdic-richtext rbc>rb,
+.zdic-richtext rtc>rt {
+  display: table-cell;
+  letter-spacing: 0;
+}
+
+.zdic-richtext rp {
+  display: none;
+}
+
+/* ── .gnr 古诗注音行 ── */
+.zdic-richtext .gnr .pz {
+  border-bottom: 1px dashed color-mix(in srgb, var(--m3-outline) 30%, transparent);
+}
+
+.zdic-richtext .gnr .pz ruby rbc {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.zdic-richtext .gnr .pz ruby rtc {
+  font-size: 12px;
+  color: var(--m3-tertiary, #8f6652);
+  line-height: 30px;
+}
+
+.zdic-richtext .gnr .def {
+  margin: 5px 0;
+  line-height: 1.6em;
+}
+
+/* ── .jnr 解释列表（红色序号） ── */
+.zdic-richtext .jnr ul,
+.zdic-richtext .bknr ul,
+.zdic-richtext .wknr ul {
+  list-style: none;
+  counter-reset: li;
+  padding-left: 1.5em;
+}
+
+.zdic-richtext .jnr ul li::before,
+.zdic-richtext .bknr ul li::before,
+.zdic-richtext .wknr ul li::before {
+  content: counter(li);
+  counter-increment: li;
+  color: var(--m3-error, #e53935);
+  display: inline-block;
+  width: 1.8em;
+  margin-left: -1.8em;
+  margin-right: 0.4em;
+  text-align: right;
+  font-weight: 600;
+}
+
+.zdic-richtext .jnr li {
+  counter-increment: li;
+}
+
+/* ── nr-box 段落容器 ── */
+.zdic-richtext .nr-box {
+  border: 1px solid color-mix(in srgb, var(--m3-outline-variant, #af9a87) 70%, transparent);
+  padding: 10px;
+  margin-bottom: 12px;
+  break-inside: avoid;
+}
+
+.zdic-richtext .nr-box-header {
+  background: color-mix(in srgb, var(--m3-surface-container-high, #f3e8df) 60%, transparent);
+  padding: 8px 12px;
+  margin: 0 -10px 1em -10px;
+  font-size: 12px;
+}
+
+/* ── nr-box 解释类型色条 ──
+   语义分类指示色，通过 CSS 变量集中管理，
+   方便后续统一调整。                        */
+.zdic-richtext {
+  --zdic-bar-jbjs: #c99464;
+  --zdic-bar-xxjs: #ea8a61;
+  --zdic-bar-gyjs: #6a0000;
+  --zdic-bar-cyjs: #e8ad62;
+  --zdic-bar-swjz: #aea4a4;
+  --zdic-bar-yyfy: #8899bd;
+  --zdic-bar-zyzx: #c69f7b;
+  --zdic-bar-wytl: #88abc3;
+  --zdic-bar-zyyy: #9c7474;
+  --zdic-bar-wljs: #aea4a4;
+  --zdic-bar-origin: #669eff;
+  --zdic-bar-translation: #194885;
+  --zdic-bar-derived: #5f167d;
+  --zdic-bar-usage: #78ad79;
+  --zdic-bar-translations: #ff8c4d;
+  --zdic-bar-examples: #1c7744;
+  --zdic-bar-synonyms: #d49882;
+  --zdic-bar-nearby: #bb5454;
+}
+
+.zdic-richtext .nr-box-shiyi.jbjs {
+  border-right: solid 4px var(--zdic-bar-jbjs);
+}
+
+.zdic-richtext .nr-box-shiyi.xxjs {
+  border-right: solid 4px var(--zdic-bar-xxjs);
+}
+
+.zdic-richtext .nr-box-shiyi.gyjs {
+  border-right: solid 4px var(--zdic-bar-gyjs);
+}
+
+.zdic-richtext .nr-box-shiyi.cyjs {
+  border-right: solid 4px var(--zdic-bar-cyjs);
+}
+
+.zdic-richtext .nr-box-shiyi.kxzd {
+  border-right: solid 4px var(--zdic-bar-cyjs);
+}
+
+.zdic-richtext .nr-box-shiyi.swjz {
+  border-right: solid 4px var(--zdic-bar-swjz);
+}
+
+.zdic-richtext .nr-box-shiyi.yyfy {
+  border-right: solid 4px var(--zdic-bar-yyfy);
+}
+
+.zdic-richtext .nr-box-shiyi.zyzx {
+  border-right: solid 4px var(--zdic-bar-zyzx);
+}
+
+.zdic-richtext .nr-box-shiyi.wytl {
+  border-right: solid 4px var(--zdic-bar-wytl);
+}
+
+.zdic-richtext .nr-box-shiyi.zyyy {
+  border-right: solid 4px var(--zdic-bar-zyyy);
+}
+
+.zdic-richtext .nr-box-shiyi.wljs {
+  border-right: solid 4px var(--zdic-bar-wljs);
+}
+
+.zdic-richtext .nr-box-origin {
+  border-left: solid 4px var(--zdic-bar-origin);
+}
+
+.zdic-richtext .nr-box-translation {
+  border-right: solid 4px var(--zdic-bar-translation);
+}
+
+.zdic-richtext .nr-box-derived {
+  border-right: solid 4px var(--zdic-bar-derived);
+}
+
+.zdic-richtext .nr-box-usage {
+  border-right: solid 4px var(--zdic-bar-usage);
+}
+
+.zdic-richtext .nr-box-translations {
+  border-right: solid 4px var(--zdic-bar-translations);
+}
+
+.zdic-richtext .nr-box-examples {
+  border-right: solid 4px var(--zdic-bar-examples);
+}
+
+.zdic-richtext .nr-box-synonyms,
+.zdic-richtext .nr-box-wordlists,
+.zdic-richtext .nr-box-quotations {
+  border-left: solid 4px var(--zdic-bar-synonyms);
+}
+
+.zdic-richtext .nr-box-nearby-words {
+  border-right: solid 4px var(--zdic-bar-nearby);
+}
+
+/* ── 特殊文字着色 ── */
+.zdic-richtext .diczx1,
+.zdic-richtext .smcs,
+.zdic-richtext .yhcs {
+  color: var(--m3-tertiary, #f9690e);
+}
+
+.zdic-richtext .smcs,
+.zdic-richtext .yhcs {
+  font-weight: bold;
+}
+
+.zdic-richtext .encs {
+  color: var(--m3-primary, #339900);
+}
+
+/* ── 交叉引用虚线 ── */
+.zdic-richtext .crefe {
+  border-bottom: dashed 1px color-mix(in srgb, var(--m3-on-surface) 40%, transparent);
+  margin-right: 0.6em;
+}
+
+/* ── enbox 英文释义块 ── */
+.zdic-richtext .enbox {
+  padding: 8px 0 5px;
+  border-top: 1px solid color-mix(in srgb, var(--m3-outline) 25%, transparent);
+  margin: 5px;
+}
+
+/* ── 笔记/注释框 ── */
+.zdic-richtext .zdict .note {
+  color: var(--m3-on-surface, #222);
+  line-height: 1.4em;
+  background-color: color-mix(in srgb, var(--m3-surface-container-high, #e9eef4) 70%, transparent);
+  margin: 6px 0;
+  padding: 6px 4px 6px 18px;
+  display: block;
+}
+
+/* ── 词性缩写 ── */
+.zdic-richtext .zdict .posp {
+  font-size: 80%;
+  text-transform: uppercase;
+}

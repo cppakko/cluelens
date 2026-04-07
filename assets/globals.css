@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── Shadow DOM isolation ──
+   Reset all inherited properties on the shadow host so that
+   host-page styles (zoom, font-size, color …) cannot leak
+   into the dict panel rendered inside the Shadow DOM.        */
+:host {
+  all: initial;
+  font-family: var(--cl-font-family, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 10px;
+
+  /* ── M3 Dict Panel Tokens ──
+     Fallbacks shown before JS generates the real theme. */
+  --m3-primary: #81b29a;
+  --m3-on-primary: #ffffff;
+  --m3-primary-container: #f2cc8f;
+  --m3-on-primary-container: #311300;
+
+  --m3-secondary: #586249;
+  --m3-on-secondary: #ffffff;
+  --m3-secondary-container: #dce7c8;
+  --m3-on-secondary-container: #161e0b;
+
+  --m3-outline: #e07a5f;
+  --m3-outline-variant: #dfdcce;
+
+  --m3-surface-container-lowest: #ffffff;
+  --m3-surface-container-low: #f9f8f2;
+  --m3-surface-container-high: #f4f1de;
+  --m3-surface-container-highest: #ebe8d5;
+  --m3-on-surface: #3d405b;
+  --m3-on-surface-variant: #646887;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* ── px-based spacing (default is 0.25rem) ──
+     Use px so that Shadow DOM content is not affected
+     by the host page's <html> font-size.                  */
+  --spacing: 4px;
+
+  /* ── px-based font sizes ── */
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes dictFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@layer utilities {
+  .animate-dict-fade-in {
+    animation: dictFadeIn 0.3s ease-out both;
+  }
+
+  .animate-skeleton-shimmer {
+    background-color: var(--m3-surface-container-highest);
+    background-image: linear-gradient(90deg,
+        color-mix(in srgb, var(--m3-surface-container-highest) 92%, transparent) 0%,
+        color-mix(in srgb, var(--m3-on-surface) 12%, var(--m3-surface-container-highest)) 48%,
+        color-mix(in srgb, var(--m3-surface-container-highest) 92%, transparent) 100%);
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.6s ease-in-out infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, currentColor 20%, transparent);
+    background-color: color-mix(in srgb, var(--m3-on-surface-variant) 50%, transparent);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, var(--m3-on-surface-variant) 80%, transparent);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--m3-on-surface-variant) 50%, transparent) transparent;
+  }
+}

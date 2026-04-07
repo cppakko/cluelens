@@ -1,0 +1,11 @@
+{
+    "open_panel_description": {
+        "message": "打开主面板"
+    },
+    "ext_name": {
+        "message": "ClueLens BETA"
+    },
+    "ext_description": {
+        "message": "一个为语言学习者打造的强大词典扩展。"
+    }
+}

@@ -1,0 +1,222 @@
+{
+    "appbar": {
+        "searchPlaceholder": "検索...",
+        "search": "検索",
+        "searchAriaLabel": "検索",
+        "settings": "設定",
+        "settingsAriaLabel": "設定を開く",
+        "close": "閉じる",
+        "closeAriaLabel": "パネルを閉じる"
+    },
+    "dictPanel": {
+        "noResults": "結果なし",
+        "noResultsDesc": "単語を検索すると、ここに結果が表示されます。",
+        "noDictsEnabled": "辞書が有効になっていません",
+        "noDictsEnabledDesc": "設定で少なくとも1つの辞書を有効にしてください。"
+    },
+    "dictItem": {
+        "showMore": "もっと見る",
+        "showLess": "折りたたむ"
+    },
+    "options": {
+        "common": "一般",
+        "dictionaries": "辞書",
+        "vocabulary": "単語帳",
+        "about": "情報",
+        "settings": "設定",
+        "aboutTitle": "情報",
+        "aboutSubtitle": "バージョンとプロジェクト情報",
+        "version": "バージョン {{version}}"
+    },
+    "commonSettings": {
+        "title": "一般設定",
+        "subtitle": "拡張機能の基本動作と設定を構成",
+        "enableLangDetection": "言語検出を有効にする",
+        "translatorOutputLang": "翻訳出力言語",
+        "translatorOutputLangDesc": "すべての翻訳モジュール（Google、彩雲小訳、DeepLx など）の出力言語を設定します。",
+        "uiLanguage": "インターフェース言語",
+        "uiLanguageDesc": "拡張機能の表示言語を設定します。",
+        "followBrowser": "ブラウザの言語に従う",
+        "themeColor": "テーマカラー",
+        "themeColorDesc": "拡張機能のカラースキームを生成するためのシードカラーを設定します。",
+        "chromaTone": "クロマ & トーン",
+        "chromaToneDesc": "テーマ生成に使用されるソースカラーのクロマ（彩度）とトーン（明度）を微調整します。",
+        "darkMode": "ダークモード",
+        "resetDefault": "デフォルトに戻す",
+        "backupRestore": "設定のバックアップと復元",
+        "backupRestoreDesc": "現在のすべての設定を JSON ファイルとしてエクスポートするか、JSON ファイルをインポートして既存設定を上書きします。",
+        "exportJson": "JSON をエクスポート",
+        "importJson": "JSON をインポート",
+        "exportSuccess": "設定を JSON ファイルとしてエクスポートしました。",
+        "exportError": "設定のエクスポートに失敗しました。しばらくしてから再試行してください。",
+        "importSuccess": "設定を正常にインポートして復元しました。",
+        "importError": "設定のインポートに失敗しました: {{message}}",
+        "importErrorUnknown": "不明なエラー",
+        "importConfirm": "インポートすると現在のすべての設定が上書きされます。続行しますか？"
+    },
+    "fontSettings": {
+        "title": "カスタムフォント",
+        "enableCustomFont": "カスタムフォントを有効にする",
+        "fontFamily": "フォント",
+        "fontFamilyDesc": "プリセットを選択するか、Google Fonts のフォント名を入力してください。",
+        "cdnProvider": "CDN プロバイダー",
+        "cdnProviderDesc": "中国本土のユーザーは上海交通大学ミラーに切り替えると読み込みが速くなります。",
+        "cdnGoogle": "Google Fonts",
+        "cdnSjtuMirror": "上海交通大学ミラー（中国）",
+        "customInput": "カスタム",
+        "preview": "フォントプレビュー",
+        "previewText": "The quick brown fox jumps over the lazy dog. 中文字体预览。日本語フォントプレビュー。"
+    },
+    "dictSettings": {
+        "title": "辞書管理",
+        "enableDicts": "辞書を有効にする",
+        "displayOrder": "表示順序",
+        "displayOrderDesc": "ドラッグして辞書の表示順序を変更"
+    },
+    "language": {
+        "all": "すべての言語",
+        "en": "英語",
+        "ja": "日本語",
+        "zh": "中国語",
+        "ko": "韓国語",
+        "fr": "フランス語",
+        "de": "ドイツ語",
+        "es": "スペイン語",
+        "ru": "ロシア語"
+    },
+    "ui": {
+        "configure": "{{name}} を設定"
+    },
+    "dict": {
+        "bing": "Bing 辞書",
+        "caiyun": "彩雲小訳",
+        "google": "Google 翻訳",
+        "longman": "ロングマン辞書",
+        "openai": "OpenAI",
+        "jisho": "Jisho",
+        "deeplx": "DeepLx",
+        "wiktionary": "ウィクショナリー",
+        "urban": "Urban Dictionary",
+        "omw": "オープン多言語ワードネット",
+        "dictionaryApi": "DictionaryAPI",
+        "zdic": "Zdic",
+        "moegirl": "萌娘百科"
+    },
+    "dictionaryApi": {
+        "origin": "Origin",
+        "synonyms": "Synonyms",
+        "antonyms": "Antonyms",
+        "source": "Source"
+    },
+    "zdic": {
+        "source": "Zdicで開く"
+    },
+    "moegirl": {
+        "source": "萌娘百科で開く"
+    },
+    "error": {
+        "renderError": "レンダリング中にエラーが発生しました",
+        "generic": "エラーが発生しました"
+    },
+    "miniIcon": {
+        "alt": "辞書アイコン"
+    },
+    "speaker": {
+        "playAudio": "音声を再生"
+    },
+    "bing": {
+        "examples": "例文"
+    },
+    "longman": {
+        "noEntries": "ロングマンで一致する項目が見つかりませんでした。",
+        "noSenses": "詳細な意味は利用できません。",
+        "playPron": "{{lang}} の発音を再生",
+        "coreVocab": "コア語彙レベル"
+    },
+    "caiyunConfig": {
+        "useCustomToken": "カスタム Token を使用",
+        "apiToken": "API Token",
+        "tokenPlaceholder": "彩雲オープンプラットフォームで取得したトークン",
+        "tokenHelp": "<0>彩雲オープンプラットフォーム</0> で申請できます。"
+    },
+    "deeplxConfig": {
+        "endpointType": "エンドポイントタイプ",
+        "apiEndpoint": "API Endpoint",
+        "officialEndpointDesc": "DeepLx Official エンドポイントアドレス",
+        "defaultEndpointDesc": "DeepLx サービスアドレス、デフォルトは https://api.deeplx.org",
+        "apiKey": "API Key",
+        "accessTokenPlaceholder": "Access Token",
+        "accessTokenDesc": "DeepLx デプロイ時に設定したアクセストークン（Bearer Token）。"
+    },
+    "openaiConfig": {
+        "baseUrl": "Base URL",
+        "apiKey": "API Key",
+        "model": "モデル",
+        "systemPrompt": "システムプロンプト"
+    },
+    "wiktionaryConfig": {
+        "displayLanguage": "表示言語",
+        "displayLanguageDesc": "Wiktionary のコンテンツ言語バージョンを選択します。"
+    },
+    "omwConfig": {
+        "lang": "検索言語",
+        "langDesc": "単語検索に使用する言語。「自動検出」は入力テキストから言語を判定します。",
+        "lang2": "バックオフ言語",
+        "lang2Desc": "主言語にデータがない場合に、定義や翻訳を提供するフォールバック言語。",
+        "maxSynsets": "最大表示語義数",
+        "maxSynsetsDesc": "検索ごとに取得・表示する語義（synset）の最大数。"
+    },
+    "engineError": {
+        "deeplxApiKeyMissing": "設定で DeepLx の API Key を入力してください。",
+        "deeplxRequestFailed": "DeepLx リクエスト失敗、エラーコード: {{code}}",
+        "openaiApiKeyMissing": "API Key は空にできません。設定で入力してください。",
+        "openaiRequestFailed": "OpenAI API リクエスト失敗: {{status}} {{statusText}}",
+        "googleRequestFailed": "Google Translate リクエスト失敗: {{status}} {{statusText}}",
+        "dictionaryApiRequestFailed": "DictionaryAPI リクエスト失敗: {{status}} {{statusText}}",
+        "zdicRequestFailed": "Zdic リクエスト失敗: {{status}} {{statusText}}",
+        "jishoUnexpectedStructure": "予期しない HTML 構造：#primary または #secondary 要素が見つかりません",
+        "moegirlRequestFailed": "萌娘百科リクエスト失敗: {{status}} {{statusText}}",
+        "urbanRequestFailed": "Urban Dictionary リクエスト失敗: {{status}} {{statusText}}"
+    },
+    "languageOptions": {
+        "followBrowser": "ブラウザの言語に従う"
+    },
+    "openaiView": {
+        "translation": "翻訳",
+        "detected": "検出言語",
+        "autoDetected": "自動判定",
+        "targetLanguage": "対象言語",
+        "summary": "解説",
+        "alternatives": "別の訳し方",
+        "segments": "セグメント解説",
+        "notes": "メモ",
+        "language": "言語",
+        "morphology": "語形情報",
+        "meanings": "語義",
+        "synonyms": "類義語",
+        "antonyms": "対義語",
+        "collocations": "コロケーション",
+        "usageTips": "使い方のヒント",
+        "related": "関連表現",
+        "senseCount_one": "{{count}} 件の語義",
+        "senseCount_other": "{{count}} 件の語義"
+    },
+    "vocabulary": {
+        "title": "単語帳",
+        "subtitle": "保存した単語を管理",
+        "searchPlaceholder": "保存した単語を検索...",
+        "empty": "保存した単語はありません",
+        "emptyDesc": "辞書結果のブックマークアイコンをクリックして単語を保存できます。",
+        "delete": "削除",
+        "deleteConfirm": "この単語を削除しますか？",
+        "clearAll": "すべてクリア",
+        "clearConfirm": "保存したすべての単語をクリアしますか？この操作は元に戻せません。",
+        "exportJson": "JSON エクスポート",
+        "exportCsv": "CSV エクスポート",
+        "saved": "保存済み",
+        "save": "保存",
+        "totalCount": "{{count}} 語",
+        "addedAt": "{{date}} に追加",
+        "from": "{{dict}} から"
+    }
+}

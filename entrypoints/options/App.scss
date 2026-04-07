@@ -1,0 +1,232 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* M3 color tokens are applied dynamically via generateMD3Theme() in App.tsx.
+     The values below serve only as initial fallbacks before JS executes. */
+  --m3-primary: #0b57d0;
+  --m3-on-primary: #ffffff;
+  --m3-primary-container: #d3e3fd;
+  --m3-on-primary-container: #062e6f;
+
+  --m3-secondary: #5a5f72;
+  --m3-on-secondary: #ffffff;
+  --m3-secondary-container: #dfe2f9;
+  --m3-on-secondary-container: #171c2c;
+
+  --m3-tertiary: #6e5676;
+  --m3-on-tertiary: #ffffff;
+  --m3-tertiary-container: #f8d8ff;
+  --m3-on-tertiary-container: #271430;
+
+  --m3-error: #ba1a1a;
+  --m3-on-error: #ffffff;
+  --m3-error-container: #ffdad6;
+  --m3-on-error-container: #410002;
+
+  --m3-surface: #f9f9ff;
+  --m3-on-surface: #1a1c20;
+  --m3-on-surface-variant: #44474f;
+
+  --m3-surface-container-lowest: #ffffff;
+  --m3-surface-container-low: #f3f3fa;
+  --m3-surface-container: #ededf4;
+  --m3-surface-container-high: #e7e8ee;
+  --m3-surface-container-highest: #e2e2e9;
+
+  --m3-outline: #74777f;
+  --m3-outline-variant: #c4c6d0;
+
+  --m3-inverse-surface: #2f3036;
+  --m3-inverse-on-surface: #f0f0f7;
+
+  --options-sidebar-width: 304px;
+  --m3-elevation-1: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --m3-elevation-2: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  background: var(--m3-surface-container-high);
+  color: var(--m3-on-surface);
+}
+
+.options-shell {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.options-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.options-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(260px, var(--options-sidebar-width)) minmax(0, 1fr);
+  gap: 24px;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.options-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 0;
+}
+
+.options-brand-card,
+.options-nav-card {
+  background: var(--m3-surface-container-low);
+}
+
+.options-brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 22px 22px;
+  border-radius: 28px;
+}
+
+.options-brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 28px;
+  background: var(--m3-primary-container);
+}
+
+.options-brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--m3-primary) 8%, transparent);
+  color: var(--m3-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.options-nav-card {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 18px;
+  border-radius: 28px;
+}
+
+.options-main {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.options-panel {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 48px);
+  min-height: 0;
+  border-radius: 36px;
+  padding: 30px;
+  overflow: hidden;
+  background: var(--m3-surface);
+
+}
+
+.options-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+}
+
+.options-content-stage {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  transform-origin: top center;
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease,
+    filter 220ms ease;
+}
+
+.options-content-stage.is-hidden {
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  filter: blur(4px);
+}
+
+.options-content-stage.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.options-content-card {
+  padding-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .options-content-stage {
+    transition: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .options-shell {
+    height: auto;
+    overflow: visible;
+  }
+
+  .options-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .options-panel {
+    min-height: auto;
+    height: auto;
+  }
+
+  .options-panel-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .options-layout {
+    gap: 16px;
+    padding: 14px;
+  }
+
+  .options-brand-card,
+  .options-nav-card,
+  .options-panel {
+    border-radius: 24px;
+  }
+
+  .options-panel {
+    padding: 20px 16px;
+  }
+}

@@ -1,0 +1,439 @@
+.WiktionaryDict {
+  --wk-text: var(--m3-on-surface, #1f2937);
+  --wk-text-muted: color-mix(in srgb, var(--wk-text) 68%, transparent);
+  --wk-text-faint: color-mix(in srgb, var(--wk-text) 48%, transparent);
+  --wk-link: var(--m3-primary, #2563eb);
+  --wk-border: color-mix(in srgb, var(--wk-text) 12%, transparent);
+  --wk-border-strong: color-mix(in srgb, var(--wk-text) 18%, transparent);
+  --wk-surface: color-mix(in srgb, var(--wk-text) 4%, transparent);
+  --wk-surface-2: color-mix(in srgb, var(--wk-text) 7%, transparent);
+  --wk-highlight: color-mix(in srgb, var(--wk-link) 12%, transparent);
+
+  color: var(--wk-text);
+  line-height: 1.72;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-align: left;
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
+
+  :where(*) {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  :where(div, p, li, dd, dt, td, th, figcaption) {
+    text-align: left;
+  }
+
+  :where(p, ul, ol, dl, table, blockquote, pre, figure) {
+    margin: 0.55em 0;
+  }
+
+  :where(ul, ol) {
+    padding-left: 1.2em;
+  }
+
+  :where(li + li) {
+    margin-top: 0.28em;
+  }
+
+  :where(ul ul, ul ol, ol ul, ol ol) {
+    margin-top: 0.28em;
+    margin-bottom: 0.28em;
+  }
+
+  :where(dl) {
+    margin-left: 0;
+  }
+
+  :where(dt) {
+    margin-top: 0.5em;
+    font-weight: 600;
+    color: var(--wk-text);
+  }
+
+  :where(dd) {
+    margin: 0.28em 0 0.55em 0.9em;
+    padding-left: 0.75em;
+    border-left: 2px solid var(--wk-border);
+  }
+
+  :where(strong, b) {
+    font-weight: 650;
+  }
+
+  :where(small) {
+    color: var(--wk-text-muted);
+  }
+
+  :where(sub, sup) {
+    font-size: 0.72em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  :where(sup) {
+    top: -0.45em;
+  }
+
+  :where(sub) {
+    bottom: -0.2em;
+  }
+
+  :where(a) {
+    color: var(--wk-link);
+    text-decoration: none;
+  }
+
+  :where(a:hover) {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  :where(hr) {
+    margin: 0.9em 0;
+    border: 0;
+    border-top: 1px solid var(--wk-border);
+  }
+
+  :where(code, kbd, samp, tt) {
+    padding: 0.1em 0.35em;
+    border-radius: 0.4em;
+    background: var(--wk-surface);
+    font-size: 0.92em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  :where(pre) {
+    overflow-x: auto;
+    padding: 0.75em 0.9em;
+    border: 1px solid var(--wk-border);
+    border-radius: 0.75em;
+    background: var(--wk-surface);
+    font-size: 0.92em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap;
+  }
+
+  :where(img, svg, audio, video) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .wiktionary-audio-placeholder {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin: -0.1rem 0.15rem;
+  }
+
+  .wiktionary-audio-placeholder:empty {
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  :where(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.93em;
+    background: var(--wk-surface);
+    border: 1px solid var(--wk-border);
+    border-radius: 0.85em;
+  }
+
+  :where(th, td) {
+    padding: 0.45em 0.6em;
+    border-bottom: 1px solid var(--wk-border);
+    vertical-align: top;
+  }
+
+  :where(tr:last-child > th, tr:last-child > td) {
+    border-bottom: 0;
+  }
+
+  :where(th) {
+    background: var(--wk-surface-2);
+    font-weight: 650;
+    text-align: left;
+  }
+
+  .mw-parser-output,
+  .mw-body-content,
+  #mw-content-text {
+    min-width: 0;
+  }
+
+  .mw-parser-output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .mw-parser-output>section,
+  .mw-parser-output>.mw-heading,
+  .mw-parser-output>h2,
+  .mw-parser-output>h3,
+  .mw-parser-output>h4 {
+    min-width: 0;
+  }
+
+  .mw-parser-output>section {
+    padding-top: 0.15rem;
+  }
+
+  .mw-parser-output>section+section {
+    margin-top: 0.15rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--wk-border);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, .mw-heading) {
+    margin: 0;
+    line-height: 1.35;
+    color: var(--wk-text);
+  }
+
+  :where(h1, .mw-heading1) {
+    font-size: 1.2rem;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+  }
+
+  :where(h2, .mw-heading2) {
+    margin-top: 0.15rem;
+    padding: 0.2rem 0 0.45rem;
+    border-bottom: 1px solid var(--wk-border);
+    font-size: 1rem;
+    font-weight: 750;
+  }
+
+  :where(h3, .mw-heading3) {
+    margin-top: 0.55rem;
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: var(--wk-link);
+  }
+
+  :where(h4, h5, h6, .mw-heading4, .mw-heading5, .mw-heading6) {
+    margin-top: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 650;
+    color: var(--wk-text-muted);
+  }
+
+  .mw-headline,
+  .mw-headline-language,
+  .mw-headline-lang {
+    scroll-margin-top: 0.5rem;
+  }
+
+  .mw-editsection,
+  .toc,
+  .shortdescription,
+  .sistersitebox,
+  .navbox,
+  .vertical-navbox,
+  .catlinks,
+  .printfooter,
+  .metadata,
+  .noprint,
+  .ambox,
+  .ombox,
+  .plainlinks+.catlinks,
+  .mw-cite-backlink,
+  .infobox,
+  .navframe,
+  .magnify,
+  .nomobile,
+  .stub,
+  .interproject,
+  .portal,
+  [role='navigation'] {
+    display: none !important;
+  }
+
+  figure,
+  .thumb,
+  .thumbinner,
+  .mw-default-size,
+  [typeof^='mw:File'] {
+    display: block;
+    max-width: 100%;
+  }
+
+  figure,
+  .thumb {
+    margin: 0.65em 0;
+  }
+
+  figcaption,
+  .thumbcaption {
+    margin-top: 0.35em;
+    color: var(--wk-text-muted);
+    font-size: 0.84em;
+    line-height: 1.5;
+  }
+
+  .mw-empty-elt:empty {
+    display: none !important;
+  }
+
+  .short-ipa,
+  .IPA,
+  .Kore,
+  .tr,
+  .Latn,
+  .mention-gloss,
+  .ib-content,
+  .qualifier,
+  .usage-label,
+  .gender,
+  .gloss,
+  .senseid {
+    display: inline;
+    color: var(--wk-text-muted);
+    font-size: 0.92em;
+  }
+
+  .qualifier,
+  .ib-content,
+  .usage-label,
+  .gender,
+  .senseid {
+    padding: 0.08em 0.45em;
+    border-radius: 999px;
+    background: var(--wk-surface-2);
+    white-space: normal;
+  }
+
+  .IPA,
+  .tr,
+  .Latn {
+    font-family: 'SF Pro Text', 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  .mw-parser-output>p:first-child {
+    margin-top: 0;
+  }
+
+  .mw-parser-output>p:has(> strong:only-child),
+  .mw-parser-output>p:has(> b:only-child) {
+    margin-top: 0.75rem;
+  }
+
+  ol>li::marker,
+  ul>li::marker {
+    color: var(--wk-text-faint);
+  }
+
+  blockquote,
+  .quotation,
+  .quote,
+  .cited-source,
+  .example {
+    margin-left: 0;
+    padding: 0.55em 0.75em;
+    border-left: 3px solid var(--wk-border-strong);
+    background: var(--wk-surface);
+    border-radius: 0 0.75em 0.75em 0;
+    color: var(--wk-text-muted);
+  }
+
+  .mw-parser-output>ul,
+  .mw-parser-output>ol {
+    padding-left: 1.1rem;
+  }
+
+  .mw-parser-output>ol>li,
+  .mw-parser-output>ul>li {
+    padding-left: 0.1rem;
+  }
+
+  .mw-parser-output>ol>li+li,
+  .mw-parser-output>ul>li+li {
+    margin-top: 0.45rem;
+  }
+
+  .reference {
+    color: var(--wk-text-faint);
+    font-size: 0.78em;
+  }
+
+  .references {
+    padding-left: 1rem;
+    font-size: 0.88em;
+    color: var(--wk-text-muted);
+  }
+
+  .error,
+  .nomatch {
+    color: var(--m3-error, #dc2626);
+  }
+
+  .wikitable,
+  .prettytable,
+  .inflection-table {
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--wk-text) 6%, transparent);
+  }
+
+  .inflection-table th,
+  .inflection-table td,
+  .wikitable th,
+  .wikitable td {
+    min-width: 3.4rem;
+  }
+
+  .wikitable caption,
+  .inflection-table caption {
+    padding: 0.3em 0.1em 0.55em;
+    text-align: left;
+    font-weight: 700;
+    color: var(--wk-text-muted);
+  }
+
+  .mw-parser-output>table+p,
+  .mw-parser-output>table+ul,
+  .mw-parser-output>table+ol {
+    margin-top: 0.75rem;
+  }
+
+  [lang] {
+    font-variant-ligatures: none;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13.5px;
+
+    :where(h1, .mw-heading1) {
+      font-size: 1.12rem;
+    }
+
+    :where(h2, .mw-heading2) {
+      font-size: 0.96rem;
+    }
+
+    :where(h3, .mw-heading3) {
+      font-size: 0.9rem;
+    }
+
+    :where(table) {
+      font-size: 0.88em;
+    }
+  }
+}

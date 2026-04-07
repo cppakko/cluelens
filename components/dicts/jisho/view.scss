@@ -1,0 +1,166 @@
+.jisho-dict {
+  padding: 10px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+.jisho-entry {
+  padding: 14px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--m3-outline-variant, #d9d9d9) 55%, transparent);
+
+  &:first-child {
+    padding-top: 4px;
+  }
+
+  &:last-child {
+    padding-bottom: 4px;
+    border-bottom: 0;
+  }
+}
+
+.jisho-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.jisho-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.jisho-reading {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.jisho-entry-link,
+.jisho-sense-links a,
+.jisho-attribution a {
+  color: var(--m3-primary, #245cff);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.jisho-entry-link {
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.jisho-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.jisho-variant {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--m3-secondary-container, #eef3ff);
+}
+
+.jisho-variant-word {
+  font-size: 14px;
+  color: var(--m3-on-secondary-container, #222);
+}
+
+.jisho-variant-reading {
+  font-size: 12px;
+  color: var(--m3-on-secondary-container, #666);
+  opacity: 0.75;
+}
+
+.jisho-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.jisho-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #555);
+  background: var(--m3-surface-container-high, #f3f3f3);
+}
+
+.jisho-tag-common {
+  color: var(--m3-on-tertiary-container, #0f5c2d);
+  background: var(--m3-tertiary-container, #dff4e3);
+}
+
+.jisho-senses {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  text-align: left;
+}
+
+.jisho-sense {
+  padding-left: 12px;
+  border-left: 2px solid color-mix(in srgb, var(--m3-primary, #245cff) 25%, transparent);
+}
+
+.jisho-sense-pos {
+  margin: 0 0 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--m3-primary, #245cff);
+}
+
+.jisho-sense-definition {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--m3-on-surface, #222);
+}
+
+.jisho-sense-meta {
+  margin-top: 6px;
+  text-align: left;
+}
+
+.jisho-sense-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.jisho-sense-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.jisho-attribution {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+  text-align: left;
+}

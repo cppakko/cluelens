@@ -1,0 +1,222 @@
+{
+    "appbar": {
+        "searchPlaceholder": "搜索...",
+        "search": "搜索",
+        "searchAriaLabel": "搜索",
+        "settings": "设置",
+        "settingsAriaLabel": "打开设置",
+        "close": "关闭",
+        "closeAriaLabel": "关闭面板"
+    },
+    "dictPanel": {
+        "noResults": "暂无结果",
+        "noResultsDesc": "查词后结果将在此处显示。",
+        "noDictsEnabled": "未启用任何词典",
+        "noDictsEnabledDesc": "请在设置中启用至少一个词典以开始查词。"
+    },
+    "dictItem": {
+        "showMore": "展开更多",
+        "showLess": "收起"
+    },
+    "options": {
+        "common": "通用",
+        "dictionaries": "词典",
+        "vocabulary": "生词本",
+        "about": "关于",
+        "settings": "设置",
+        "aboutTitle": "关于",
+        "aboutSubtitle": "版本与项目信息",
+        "version": "版本 {{version}}"
+    },
+    "commonSettings": {
+        "title": "通用设置",
+        "subtitle": "配置扩展的基本行为和偏好",
+        "enableLangDetection": "启用语种检测",
+        "translatorOutputLang": "翻译器输出语言",
+        "translatorOutputLangDesc": "设置所有翻译器模块（Google、彩云小译、DeepLx 等）的目标输出语言。",
+        "uiLanguage": "界面语言",
+        "uiLanguageDesc": "设置扩展界面的显示语言。",
+        "followBrowser": "跟随浏览器语言",
+        "themeColor": "主题色",
+        "themeColorDesc": "设置用于生成扩展配色方案的中心色。",
+        "chromaTone": "色度与色调",
+        "chromaToneDesc": "微调用于主题生成的源颜色的色度 (Chroma) 和色调 (Tone)。",
+        "darkMode": "夜间模式",
+        "resetDefault": "恢复默认",
+        "backupRestore": "设置备份与恢复",
+        "backupRestoreDesc": "将当前全部设置导出为 JSON 文件，或从 JSON 文件导入并覆盖现有设置。",
+        "exportJson": "导出 JSON",
+        "importJson": "导入 JSON",
+        "exportSuccess": "设置已导出为 JSON 文件。",
+        "exportError": "导出设置失败，请稍后重试。",
+        "importSuccess": "设置已成功导入并恢复。",
+        "importError": "导入设置失败：{{message}}",
+        "importErrorUnknown": "未知错误",
+        "importConfirm": "导入会覆盖当前所有设置，确定继续吗？"
+    },
+    "fontSettings": {
+        "title": "自定义字体",
+        "enableCustomFont": "启用自定义字体",
+        "fontFamily": "字体",
+        "fontFamilyDesc": "选择预设字体或输入 Google Fonts 字体名称。",
+        "cdnProvider": "CDN 来源",
+        "cdnProviderDesc": "中国大陆用户可切换至上海交大镜像以加快加载速度。",
+        "cdnGoogle": "Google Fonts",
+        "cdnSjtuMirror": "上海交大镜像（中国大陆）",
+        "customInput": "自定义",
+        "preview": "字体预览",
+        "previewText": "The quick brown fox jumps over the lazy dog. 中文字体预览。日本語フォントプレビュー。"
+    },
+    "dictSettings": {
+        "title": "词典管理",
+        "enableDicts": "启用词典",
+        "displayOrder": "显示顺序",
+        "displayOrderDesc": "拖拽调整词典在面板中的显示顺序"
+    },
+    "language": {
+        "all": "所有语言",
+        "en": "英语",
+        "ja": "日语",
+        "zh": "中文",
+        "ko": "韩语",
+        "fr": "法语",
+        "de": "德语",
+        "es": "西班牙语",
+        "ru": "俄语"
+    },
+    "ui": {
+        "configure": "配置 {{name}}"
+    },
+    "dict": {
+        "bing": "必应词典",
+        "caiyun": "彩云小译",
+        "google": "谷歌翻译",
+        "longman": "朗文词典",
+        "openai": "OpenAI",
+        "jisho": "Jisho",
+        "deeplx": "DeepLx",
+        "wiktionary": "维基词典",
+        "urban": "Urban Dictionary",
+        "omw": "开放多语词网",
+        "dictionaryApi": "DictionaryAPI",
+        "zdic": "汉典",
+        "moegirl": "萌娘百科"
+    },
+    "dictionaryApi": {
+        "origin": "Origin",
+        "synonyms": "Synonyms",
+        "antonyms": "Antonyms",
+        "source": "Source"
+    },
+    "zdic": {
+        "source": "打开汉典"
+    },
+    "moegirl": {
+        "source": "打开萌娘百科"
+    },
+    "error": {
+        "renderError": "渲染过程中发生错误",
+        "generic": "发生了一个错误"
+    },
+    "miniIcon": {
+        "alt": "词典图标"
+    },
+    "speaker": {
+        "playAudio": "播放音频"
+    },
+    "bing": {
+        "examples": "例句"
+    },
+    "longman": {
+        "noEntries": "未在朗文词典中找到匹配的词条。",
+        "noSenses": "暂无详细释义。",
+        "playPron": "播放 {{lang}} 发音",
+        "coreVocab": "核心词汇等级"
+    },
+    "caiyunConfig": {
+        "useCustomToken": "使用自定义 Token",
+        "apiToken": "API Token",
+        "tokenPlaceholder": "在彩云科技开放平台申请的令牌",
+        "tokenHelp": "可以在 <0>彩云科技开放平台</0> 申请。"
+    },
+    "deeplxConfig": {
+        "endpointType": "端点类型",
+        "apiEndpoint": "API Endpoint",
+        "officialEndpointDesc": "DeepLx Official 端点地址",
+        "defaultEndpointDesc": "DeepLx 服务地址，默认为 https://api.deeplx.org",
+        "apiKey": "API Key",
+        "accessTokenPlaceholder": "Access Token",
+        "accessTokenDesc": "部署 DeepLx 时设置的访问令牌（Bearer Token）。"
+    },
+    "openaiConfig": {
+        "baseUrl": "Base URL",
+        "apiKey": "API Key",
+        "model": "模型",
+        "systemPrompt": "系统提示词"
+    },
+    "wiktionaryConfig": {
+        "displayLanguage": "显示语言",
+        "displayLanguageDesc": "选择 Wiktionary 词典的内容语言版本。"
+    },
+    "omwConfig": {
+        "lang": "搜索语言",
+        "langDesc": "用于查词的语言。「自动检测」会根据输入文本自动判断语言。",
+        "lang2": "回退语言",
+        "lang2Desc": "当主语言没有数据时，用于提供释义和翻译的备选语言。",
+        "maxSynsets": "最大显示义项数",
+        "maxSynsetsDesc": "每次搜索获取并显示的最大词义（synset）数量。"
+    },
+    "engineError": {
+        "deeplxApiKeyMissing": "请在设置中填写 DeepLx 的 API Key。",
+        "deeplxRequestFailed": "DeepLx 请求失败，错误码: {{code}}",
+        "openaiApiKeyMissing": "API Key 不能为空，请在设置中填写。",
+        "openaiRequestFailed": "OpenAI API 请求失败: {{status}} {{statusText}}",
+        "googleRequestFailed": "Google Translate 请求失败: {{status}} {{statusText}}",
+        "dictionaryApiRequestFailed": "DictionaryAPI 请求失败: {{status}} {{statusText}}",
+        "zdicRequestFailed": "汉典请求失败: {{status}} {{statusText}}",
+        "moegirlRequestFailed": "萌娘百科请求失败: {{status}} {{statusText}}",
+        "jishoUnexpectedStructure": "意外的 HTML 结构：缺少 #primary 或 #secondary 元素",
+        "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}"
+    },
+    "languageOptions": {
+        "followBrowser": "跟随浏览器语言"
+    },
+    "openaiView": {
+        "translation": "翻译",
+        "detected": "识别语言",
+        "autoDetected": "自动识别",
+        "targetLanguage": "目标语言",
+        "summary": "解析",
+        "alternatives": "其他译法",
+        "segments": "分段说明",
+        "notes": "备注",
+        "language": "语言",
+        "morphology": "词形信息",
+        "meanings": "释义",
+        "synonyms": "近义词",
+        "antonyms": "反义词",
+        "collocations": "常见搭配",
+        "usageTips": "用法提示",
+        "related": "相关表达",
+        "senseCount_one": "{{count}} 条义项",
+        "senseCount_other": "{{count}} 条义项"
+    },
+    "vocabulary": {
+        "title": "生词本",
+        "subtitle": "管理你收藏的单词",
+        "searchPlaceholder": "搜索已收藏的单词...",
+        "empty": "暂无收藏",
+        "emptyDesc": "点击词典结果右侧的书签图标即可收藏单词。",
+        "delete": "删除",
+        "deleteConfirm": "确定要删除这个单词吗？",
+        "clearAll": "清空全部",
+        "clearConfirm": "确定要清空所有收藏的单词吗？此操作无法撤销。",
+        "exportJson": "导出 JSON",
+        "exportCsv": "导出 CSV",
+        "saved": "已收藏",
+        "save": "收藏",
+        "totalCount": "{{count}} 个单词",
+        "addedAt": "添加于 {{date}}",
+        "from": "来自 {{dict}}"
+    }
+}

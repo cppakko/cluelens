@@ -1,0 +1,222 @@
+{
+    "appbar": {
+        "searchPlaceholder": "Search...",
+        "search": "Search",
+        "searchAriaLabel": "search",
+        "settings": "Settings",
+        "settingsAriaLabel": "open settings",
+        "close": "Close",
+        "closeAriaLabel": "close panel"
+    },
+    "dictPanel": {
+        "noResults": "No Results Yet",
+        "noResultsDesc": "Search results will appear here when you look up a word.",
+        "noDictsEnabled": "No Dictionaries Enabled",
+        "noDictsEnabledDesc": "Enable at least one dictionary in settings to start searching."
+    },
+    "dictItem": {
+        "showMore": "Show more",
+        "showLess": "Show less"
+    },
+    "options": {
+        "common": "Common",
+        "dictionaries": "Dictionaries",
+        "vocabulary": "Vocabulary",
+        "about": "About",
+        "settings": "Settings",
+        "aboutTitle": "About",
+        "aboutSubtitle": "Version & project info",
+        "version": "Version {{version}}"
+    },
+    "commonSettings": {
+        "title": "Common Settings",
+        "subtitle": "Configure extension basics and preferences",
+        "enableLangDetection": "Enable language detection",
+        "translatorOutputLang": "Translator output language",
+        "translatorOutputLangDesc": "Set the target output language for all translator modules (Google, Caiyun, DeepLx, etc.).",
+        "uiLanguage": "Interface language",
+        "uiLanguageDesc": "Set the display language for the extension UI.",
+        "followBrowser": "Follow browser language",
+        "themeColor": "Theme color",
+        "themeColorDesc": "Set the seed color for generating the extension's color scheme.",
+        "chromaTone": "Chroma & Tone",
+        "chromaToneDesc": "Fine-tune the chroma (saturation) and tone (lightness) of the source color used for theme generation.",
+        "darkMode": "Dark mode",
+        "resetDefault": "Reset to default",
+        "backupRestore": "Backup and Restore",
+        "backupRestoreDesc": "Export all current settings to a JSON file, or import a JSON file to replace the existing settings.",
+        "exportJson": "Export JSON",
+        "importJson": "Import JSON",
+        "exportSuccess": "Settings were exported to a JSON file.",
+        "exportError": "Failed to export settings. Please try again.",
+        "importSuccess": "Settings were imported and restored successfully.",
+        "importError": "Failed to import settings: {{message}}",
+        "importErrorUnknown": "Unknown error",
+        "importConfirm": "Importing will overwrite all current settings. Continue?"
+    },
+    "fontSettings": {
+        "title": "Custom Font",
+        "enableCustomFont": "Enable custom font",
+        "fontFamily": "Font family",
+        "fontFamilyDesc": "Select a preset or enter a Google Fonts font name.",
+        "cdnProvider": "CDN provider",
+        "cdnProviderDesc": "Users in mainland China can switch to the SJTU mirror for faster loading.",
+        "cdnGoogle": "Google Fonts",
+        "cdnSjtuMirror": "SJTU Mirror (China)",
+        "customInput": "Custom",
+        "preview": "Font preview",
+        "previewText": "The quick brown fox jumps over the lazy dog. 中文字体预览。日本語フォントプレビュー。"
+    },
+    "dictSettings": {
+        "title": "Dictionary Management",
+        "enableDicts": "Enable dictionaries",
+        "displayOrder": "Display order",
+        "displayOrderDesc": "Drag to reorder dictionaries in the panel"
+    },
+    "language": {
+        "all": "All languages",
+        "en": "English",
+        "ja": "Japanese",
+        "zh": "Chinese",
+        "ko": "Korean",
+        "fr": "French",
+        "de": "German",
+        "es": "Spanish",
+        "ru": "Russian"
+    },
+    "ui": {
+        "configure": "Configure {{name}}"
+    },
+    "dict": {
+        "bing": "Bing Dictionary",
+        "caiyun": "Caiyun Translate",
+        "google": "Google Translate",
+        "longman": "Longman Dictionary",
+        "openai": "OpenAI",
+        "jisho": "Jisho",
+        "dictionaryApi": "DictionaryAPI",
+        "zdic": "Zdic",
+        "moegirl": "Moegirl Encyclopedia",
+        "deeplx": "DeepLx",
+        "wiktionary": "Wiktionary",
+        "urban": "Urban Dictionary",
+        "omw": "Open Multilingual Wordnet"
+    },
+    "dictionaryApi": {
+        "origin": "Origin",
+        "synonyms": "Synonyms",
+        "antonyms": "Antonyms",
+        "source": "Source"
+    },
+    "zdic": {
+        "source": "Open in Zdic"
+    },
+    "moegirl": {
+        "source": "Open in Moegirl"
+    },
+    "error": {
+        "renderError": "An error occurred during rendering",
+        "generic": "An error occurred"
+    },
+    "miniIcon": {
+        "alt": "Dictionary Icon"
+    },
+    "speaker": {
+        "playAudio": "Play audio"
+    },
+    "bing": {
+        "examples": "Examples"
+    },
+    "longman": {
+        "noEntries": "Unable to find matching entries on Longman.",
+        "noSenses": "No detailed senses available.",
+        "playPron": "Play {{lang}} pronunciation",
+        "coreVocab": "Core vocabulary level"
+    },
+    "caiyunConfig": {
+        "useCustomToken": "Use custom Token",
+        "apiToken": "API Token",
+        "tokenPlaceholder": "Token from Caiyun Open Platform",
+        "tokenHelp": "You can apply at <0>Caiyun Open Platform</0>."
+    },
+    "deeplxConfig": {
+        "endpointType": "Endpoint type",
+        "apiEndpoint": "API Endpoint",
+        "officialEndpointDesc": "DeepLx Official endpoint address",
+        "defaultEndpointDesc": "DeepLx service address, default is https://api.deeplx.org",
+        "apiKey": "API Key",
+        "accessTokenPlaceholder": "Access Token",
+        "accessTokenDesc": "The access token (Bearer Token) set when deploying DeepLx."
+    },
+    "openaiConfig": {
+        "baseUrl": "Base URL",
+        "apiKey": "API Key",
+        "model": "Model",
+        "systemPrompt": "System prompt"
+    },
+    "wiktionaryConfig": {
+        "displayLanguage": "Display language",
+        "displayLanguageDesc": "Select the content language version for Wiktionary."
+    },
+    "omwConfig": {
+        "lang": "Search language",
+        "langDesc": "The language used for word lookup. 'Auto-detect' will determine the language from input text.",
+        "lang2": "Backoff language",
+        "lang2Desc": "The fallback language for definitions and translations when the primary language has no data.",
+        "maxSynsets": "Max senses to display",
+        "maxSynsetsDesc": "Maximum number of word senses (synsets) to fetch and display per search."
+    },
+    "engineError": {
+        "deeplxApiKeyMissing": "Please fill in the DeepLx API Key in settings.",
+        "deeplxRequestFailed": "DeepLx request failed, error code: {{code}}",
+        "openaiApiKeyMissing": "API Key cannot be empty. Please fill it in settings.",
+        "openaiRequestFailed": "OpenAI API request failed: {{status}} {{statusText}}",
+        "googleRequestFailed": "Google Translate request failed: {{status}} {{statusText}}",
+        "dictionaryApiRequestFailed": "DictionaryAPI request failed: {{status}} {{statusText}}",
+        "zdicRequestFailed": "Zdic request failed: {{status}} {{statusText}}",
+        "moegirlRequestFailed": "Moegirl request failed: {{status}} {{statusText}}",
+        "jishoUnexpectedStructure": "Unexpected HTML structure: missing #primary or #secondary elements",
+        "urbanRequestFailed": "Urban Dictionary request failed: {{status}} {{statusText}}"
+    },
+    "languageOptions": {
+        "followBrowser": "Follow browser language"
+    },
+    "openaiView": {
+        "translation": "Translation",
+        "detected": "Detected",
+        "autoDetected": "Auto detected",
+        "targetLanguage": "Target language",
+        "summary": "Summary",
+        "alternatives": "Alternatives",
+        "segments": "Segments",
+        "notes": "Notes",
+        "language": "Language",
+        "morphology": "Morphology",
+        "meanings": "Meanings",
+        "synonyms": "Synonyms",
+        "antonyms": "Antonyms",
+        "collocations": "Collocations",
+        "usageTips": "Usage Tips",
+        "related": "Related",
+        "senseCount_one": "{{count}} sense",
+        "senseCount_other": "{{count}} senses"
+    },
+    "vocabulary": {
+        "title": "Vocabulary Book",
+        "subtitle": "Manage your saved words",
+        "searchPlaceholder": "Search saved words...",
+        "empty": "No saved words yet",
+        "emptyDesc": "Click the bookmark icon on dictionary results to save words here.",
+        "delete": "Delete",
+        "deleteConfirm": "Are you sure you want to delete this word?",
+        "clearAll": "Clear All",
+        "clearConfirm": "Are you sure you want to clear all saved words? This cannot be undone.",
+        "exportJson": "Export JSON",
+        "exportCsv": "Export CSV",
+        "saved": "Saved",
+        "save": "Save",
+        "totalCount": "{{count}} words",
+        "addedAt": "Added {{date}}",
+        "from": "From {{dict}}"
+    }
+}

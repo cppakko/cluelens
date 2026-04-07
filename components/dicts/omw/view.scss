@@ -1,0 +1,126 @@
+.omw-dict {
+  padding: 10px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+/* Detail section */
+.omw-detail {
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--m3-outline-variant, #d9d9d9) 55%, transparent);
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 4px;
+  }
+
+  &:first-child {
+    padding-top: 4px;
+  }
+}
+
+.omw-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.omw-synset-id {
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--m3-on-surface-variant, #666);
+  opacity: 0.7;
+}
+
+.omw-pos-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--m3-primary, #245cff) 15%, transparent);
+  color: var(--m3-primary, #245cff);
+  text-transform: uppercase;
+}
+
+.omw-glossary {
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #555);
+  font-style: italic;
+}
+
+.omw-detail-block {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--m3-surface-variant, #e8e8e8) 40%, transparent);
+}
+
+.omw-detail-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--m3-on-surface-variant, #666);
+  margin: 8px 0 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.omw-translation-row {
+  display: flex;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.omw-translation-lang {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.omw-translation-lemmas {
+  color: var(--m3-on-surface-variant, #555);
+}
+
+.omw-def-row {
+  padding: 2px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.omw-def-lang {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+}
+
+.omw-def-text {
+  color: var(--m3-on-surface-variant, #555);
+  margin-left: 4px;
+}
+
+.omw-relation-row {
+  display: flex;
+  gap: 8px;
+  padding: 1px 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.omw-relation-type {
+  font-weight: 600;
+  color: var(--m3-on-surface-variant, #666);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.omw-relation-targets {
+  color: var(--m3-primary, #245cff);
+}
