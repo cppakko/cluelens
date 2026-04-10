@@ -9,19 +9,31 @@ export interface CommonSettings {
   enableLanguageDetection: boolean;
   translatorTargetLanguage: string;
   uiLanguage: string;
+  autoPreloadAudio: boolean;
 }
+
+export const commonSettingsDefault: CommonSettings = {
+  enableLanguageDetection: false,
+  translatorTargetLanguage: 'auto',
+  uiLanguage: 'auto',
+  autoPreloadAudio: false,
+};
 
 export const commonSettingsStorage = storage.defineItem<CommonSettings>(
   'local:commonSettings',
   {
-    fallback: {
-      enableLanguageDetection: false,
-      translatorTargetLanguage: 'auto',
-      uiLanguage: 'auto',
+    fallback: commonSettingsDefault,
+    version: 2,
+    migrations: {
+      2: (val: unknown) => ({ ...commonSettingsDefault, ...(val as Record<string, unknown>) }),
     },
-    version: 1,
   }
 );
+
+export async function getCommonSettings(): Promise<CommonSettings> {
+  const stored = await commonSettingsStorage.getValue();
+  return { ...commonSettingsDefault, ...stored };
+}
 
 export interface DictSetting {
   id: DictID;

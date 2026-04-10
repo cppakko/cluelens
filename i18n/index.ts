@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import zhCN from './locales/zh-CN.json';
 import ja from './locales/ja.json';
-import { commonSettingsStorage } from '@/utils/storage';
+import { getCommonSettings } from '@/utils/storage';
 
 const resources = {
   en: { translation: en },
@@ -40,8 +40,8 @@ function mapBrowserLangToLocale(uiLang: string): string {
  */
 async function resolveUiLanguage(): Promise<string> {
   try {
-    const settings = await commonSettingsStorage.getValue();
-    const setting = settings?.uiLanguage ?? 'auto';
+    const settings = await getCommonSettings();
+    const setting = settings.uiLanguage ?? 'auto';
 
     if (setting !== 'auto') {
       return setting;

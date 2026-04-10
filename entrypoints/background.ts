@@ -1,6 +1,6 @@
 import { dictMetaMap, loadDictSearcher } from '@/components/dicts';
 import { DictID, ModuleType, isLanguageSupported } from '@/components/dicts/types';
-import { commonSettingsStorage, dictSettingsStorage } from '@/utils/storage';
+import { getCommonSettings, dictSettingsStorage } from '@/utils/storage';
 import { detectTextLanguage } from '@/utils/detectLanguage';
 import { HttpError } from '@/utils/fetchHtml';
 import { resolveTargetLanguage } from '@/utils/languageUtils';
@@ -15,7 +15,7 @@ export default defineBackground(() => {
   onMessage('searchQuery', async (message) => {
     const tabId = message.sender.tab?.id;
     const { query, dictIds: filterDictIds } = message.data;
-    const commonSettings = await commonSettingsStorage.getValue();
+    const commonSettings = await getCommonSettings();
 
     let enabledDicts: DictID[];
     if (filterDictIds && filterDictIds.length > 0) {

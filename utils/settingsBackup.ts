@@ -4,6 +4,7 @@ import {
   DEFAULT_THEME_COLOR,
   DEFAULT_THEME_CHROMA,
   DEFAULT_THEME_TONE,
+  getCommonSettings,
   commonSettingsStorage,
   darkModeStorage,
   dictSettingsStorage,
@@ -211,7 +212,7 @@ export async function exportSettingsBackup(): Promise<SettingsBackup> {
     themeTone,
     vocabulary,
   ] = await Promise.all([
-    commonSettingsStorage.getValue(),
+    getCommonSettings(),
     dictSettingsStorage.getValue(),
     fontConfigStorage.getValue(),
     themeColorStorage.getValue(),

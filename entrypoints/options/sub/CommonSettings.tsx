@@ -6,6 +6,7 @@ import i18next from 'i18next';
 import { UI_LANGUAGES } from '@/i18n';
 import {
   commonSettingsStorage,
+  getCommonSettings,
   themeColorStorage,
   darkModeStorage,
   themeChromaStorage,
@@ -65,7 +66,7 @@ export function CommonSettings() {
   const [customFontInput, setCustomFontInput] = useState('');
 
   useEffect(() => {
-    commonSettingsStorage.getValue().then((val) => {
+    getCommonSettings().then((val) => {
       setSettings(val);
     });
     themeColorStorage.getValue().then((color) => {
