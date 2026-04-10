@@ -53,7 +53,13 @@
         "importError": "Failed to import settings: {{message}}",
         "importErrorUnknown": "Unknown error",
         "importConfirm": "Importing will overwrite all current settings. Continue?",
-        "autoPreloadAudio": "Auto preload audio"
+        "autoPreloadAudio": "Auto preload audio",
+        "autoPlayAudio": "Auto play pronunciation",
+        "autoPlayAudioDesc": "Automatically speak the search term using TTS after each lookup.",
+        "ttsProvider": "TTS service",
+        "ttsProviderDesc": "Select the text-to-speech engine used for auto pronunciation.",
+        "ttsWebSpeech": "Web Speech API (browser built-in)",
+        "ttsLingva": "Lingva Translate TTS"
     },
     "fontSettings": {
         "title": "Custom Font",

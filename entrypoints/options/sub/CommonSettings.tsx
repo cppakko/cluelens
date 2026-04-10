@@ -49,6 +49,8 @@ export function CommonSettings() {
     translatorTargetLanguage: 'auto',
     uiLanguage: 'auto',
     autoPreloadAudio: false,
+    autoPlayAudio: false,
+    ttsProvider: 'webSpeech',
   });
   const [themeColor, setThemeColor] = useState(DEFAULT_THEME_COLOR);
   const [darkMode, setDarkMode] = useState(false);
@@ -449,6 +451,53 @@ export function CommonSettings() {
           }}
           className="mt-3 bg-(--m3-surface-container-lowest) hover:bg-(--m3-surface-container-low)"
         />
+
+        <SettingToggleItem
+          id="autoPlayAudio"
+          name={t('commonSettings.autoPlayAudio')}
+          subtitle={t('commonSettings.autoPlayAudioDesc')}
+          enabled={settings.autoPlayAudio}
+          onToggle={(checked) => {
+            updateSettings({ autoPlayAudio: checked });
+          }}
+          className="mt-3 bg-(--m3-surface-container-lowest) hover:bg-(--m3-surface-container-low)"
+        />
+
+        {settings.autoPlayAudio && (
+          <div className="mt-3 space-y-2 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-4">
+            <label
+              htmlFor="ttsProvider"
+              className="block text-sm font-medium text-(--m3-on-surface) mb-1"
+            >
+              {t('commonSettings.ttsProvider')}
+            </label>
+            <Select
+              value={settings.ttsProvider}
+              onValueChange={(val) => {
+                updateSettings({ ttsProvider: val as CommonSettings['ttsProvider'] });
+              }}
+            >
+              <SelectTrigger
+                id="ttsProvider"
+                className={selectTriggerClassName}
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent position="popper" className={selectContentClassName}>
+                <SelectItem value="webSpeech" className={selectItemClassName}>
+                  {t('commonSettings.ttsWebSpeech')}
+                </SelectItem>
+                <SelectItem value="lingva" className={selectItemClassName}>
+                  {t('commonSettings.ttsLingva')}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+            <p className="text-xs text-(--m3-on-surface-variant) mt-1.5">
+              {t('commonSettings.ttsProviderDesc')}
+            </p>
+          </div>
+        )}
+
         <div className="mt-3 space-y-2 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-4">
           <label
             htmlFor="translatorTargetLanguage"

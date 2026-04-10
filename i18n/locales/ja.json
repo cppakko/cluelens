@@ -53,7 +53,13 @@
         "importError": "設定のインポートに失敗しました: {{message}}",
         "importErrorUnknown": "不明なエラー",
         "importConfirm": "インポートすると現在のすべての設定が上書きされます。続行しますか？",
-        "autoPreloadAudio": "音声を自動プリロード"
+        "autoPreloadAudio": "音声を自動プリロード",
+        "autoPlayAudio": "発音を自動再生",
+        "autoPlayAudioDesc": "検索のたびに TTS サービスで検索語を自動的に読み上げます。",
+        "ttsProvider": "TTS サービス",
+        "ttsProviderDesc": "自動発音に使用するテキスト読み上げエンジンを選択します。",
+        "ttsWebSpeech": "Web Speech API（ブラウザ内蔵）",
+        "ttsLingva": "Lingva Translate TTS"
     },
     "fontSettings": {
         "title": "カスタムフォント",

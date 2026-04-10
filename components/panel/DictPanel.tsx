@@ -9,6 +9,7 @@ import { List, ListItem } from "@/components/ui/List";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { Search } from "lucide-react";
 import { useDictSearch } from "./hooks/useDictSearch";
+import { useAutoPlayAudio } from "./hooks/useAutoPlayAudio";
 import { usePanelPosition, usePanelVisibility } from "./hooks/usePanelPosition";
 import { useTranslation } from 'react-i18next';
 import { generateMD3Theme } from "@/utils/md3Helper";
@@ -102,6 +103,8 @@ export default function DictPanel(props: DictPanelProps) {
     filterDictIds: props.filterDictIds,
     searchDelayMs,
   });
+
+  useAutoPlayAudio({ searchText, show: props.show, isPopup: props.isPopup, orderedDictIds });
 
   const { visible, isClosing, handleTransitionEnd } = usePanelVisibility({
     isPopup: props.isPopup,

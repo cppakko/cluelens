@@ -53,7 +53,13 @@
         "importError": "导入设置失败：{{message}}",
         "importErrorUnknown": "未知错误",
         "importConfirm": "导入会覆盖当前所有设置，确定继续吗？",
-        "autoPreloadAudio": "自动预加载音频"
+        "autoPreloadAudio": "自动预加载音频",
+        "autoPlayAudio": "自动播放读音",
+        "autoPlayAudioDesc": "每次查词后自动使用 TTS 服务朗读搜索词。",
+        "ttsProvider": "TTS 服务源",
+        "ttsProviderDesc": "选择用于自动发音的语音合成引擎。",
+        "ttsWebSpeech": "Web Speech API（浏览器内建）",
+        "ttsLingva": "Lingva Translate TTS"
     },
     "fontSettings": {
         "title": "自定义字体",

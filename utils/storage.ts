@@ -5,11 +5,15 @@ import { DeeplxConfig, deeplxConfigDefault } from '@/components/dicts/deeplx/typ
 import { WiktionaryConfig, defaultWiktionaryConfig } from '@/components/dicts/wiktionary/types';
 import { OmwConfig, defaultOmwConfig } from '@/components/dicts/omw/types';
 
+export type TtsProvider = 'webSpeech' | 'lingva';
+
 export interface CommonSettings {
   enableLanguageDetection: boolean;
   translatorTargetLanguage: string;
   uiLanguage: string;
   autoPreloadAudio: boolean;
+  autoPlayAudio: boolean;
+  ttsProvider: TtsProvider;
 }
 
 export const commonSettingsDefault: CommonSettings = {
@@ -17,6 +21,8 @@ export const commonSettingsDefault: CommonSettings = {
   translatorTargetLanguage: 'auto',
   uiLanguage: 'auto',
   autoPreloadAudio: false,
+  autoPlayAudio: false,
+  ttsProvider: 'webSpeech',
 };
 
 export const commonSettingsStorage = storage.defineItem<CommonSettings>(

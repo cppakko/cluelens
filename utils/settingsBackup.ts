@@ -87,6 +87,8 @@ function normalizeNumber(value: unknown, fallback: number, min: number, max: num
     : fallback;
 }
 
+const validTtsProviders = new Set(['webSpeech', 'lingva']);
+
 function normalizeCommonSettings(value: unknown): CommonSettings {
   const prev = isRecord(value) ? value : {};
 
@@ -95,6 +97,10 @@ function normalizeCommonSettings(value: unknown): CommonSettings {
     translatorTargetLanguage: normalizeString(prev.translatorTargetLanguage, 'auto'),
     uiLanguage: normalizeString(prev.uiLanguage, 'auto'),
     autoPreloadAudio: normalizeBoolean(prev.autoPreloadAudio, false),
+    autoPlayAudio: normalizeBoolean(prev.autoPlayAudio, false),
+    ttsProvider: typeof prev.ttsProvider === 'string' && validTtsProviders.has(prev.ttsProvider)
+      ? prev.ttsProvider as CommonSettings['ttsProvider']
+      : 'webSpeech',
   };
 }
 
