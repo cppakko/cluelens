@@ -58,7 +58,7 @@ function parse(rawHtml: string): BingResult[] {
 
   return [{
     title,
-    prons: $('.client_def_hd_pn_bar').map((_, el) => ({
+    prons: $('.client_def_hd_pn_list').map((_, el) => ({
       lang: $(el).find('.client_def_hd_pn').text().trim(),
       pron: resolveAudioUrl($(el).find('.client_aud_o').attr('data-pronunciation') || ''),
     })).get(),
