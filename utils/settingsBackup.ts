@@ -93,6 +93,7 @@ function normalizeCommonSettings(value: unknown): CommonSettings {
     enableLanguageDetection: normalizeBoolean(prev.enableLanguageDetection, true),
     translatorTargetLanguage: normalizeString(prev.translatorTargetLanguage, 'auto'),
     uiLanguage: normalizeString(prev.uiLanguage, 'auto'),
+    autoPreloadAudio: normalizeBoolean(prev.autoPreloadAudio, false),
   };
 }
 

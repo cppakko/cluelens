@@ -52,7 +52,8 @@
         "importSuccess": "设置已成功导入并恢复。",
         "importError": "导入设置失败：{{message}}",
         "importErrorUnknown": "未知错误",
-        "importConfirm": "导入会覆盖当前所有设置，确定继续吗？"
+        "importConfirm": "导入会覆盖当前所有设置，确定继续吗？",
+        "autoPreloadAudio": "自动预加载音频"
     },
     "fontSettings": {
         "title": "自定义字体",

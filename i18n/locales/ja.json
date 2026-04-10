@@ -52,7 +52,8 @@
         "importSuccess": "設定を正常にインポートして復元しました。",
         "importError": "設定のインポートに失敗しました: {{message}}",
         "importErrorUnknown": "不明なエラー",
-        "importConfirm": "インポートすると現在のすべての設定が上書きされます。続行しますか？"
+        "importConfirm": "インポートすると現在のすべての設定が上書きされます。続行しますか？",
+        "autoPreloadAudio": "音声を自動プリロード"
     },
     "fontSettings": {
         "title": "カスタムフォント",

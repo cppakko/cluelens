@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { Volume2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/utils/tailwindUtils';
+import { commonSettingsStorage } from '@/utils/storage';
 
 export interface SpeakerButtonProps extends Omit<ComponentProps<typeof Button>, 'children' | 'onClick'> {
   readonly src: string;
@@ -33,6 +34,13 @@ const SpeakerButton: FC<SpeakerButtonProps> = ({
     audio.preload = 'none';
     audio.src = src;
     audioRef.current = audio;
+
+    commonSettingsStorage.getValue().then((settings) => {
+      if (audioRef.current === audio && settings.autoPreloadAudio) {
+        audio.preload = 'auto';
+        audio.load();
+      }
+    });
 
     return () => {
       audio.pause();

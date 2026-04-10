@@ -52,7 +52,8 @@
         "importSuccess": "Settings were imported and restored successfully.",
         "importError": "Failed to import settings: {{message}}",
         "importErrorUnknown": "Unknown error",
-        "importConfirm": "Importing will overwrite all current settings. Continue?"
+        "importConfirm": "Importing will overwrite all current settings. Continue?",
+        "autoPreloadAudio": "Auto preload audio"
     },
     "fontSettings": {
         "title": "Custom Font",

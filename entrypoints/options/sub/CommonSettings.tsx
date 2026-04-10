@@ -47,6 +47,7 @@ export function CommonSettings() {
     enableLanguageDetection: true,
     translatorTargetLanguage: 'auto',
     uiLanguage: 'auto',
+    autoPreloadAudio: false,
   });
   const [themeColor, setThemeColor] = useState(DEFAULT_THEME_COLOR);
   const [darkMode, setDarkMode] = useState(false);
@@ -434,6 +435,16 @@ export function CommonSettings() {
           enabled={settings.enableLanguageDetection}
           onToggle={(checked) => {
             updateSettings({ enableLanguageDetection: checked });
+          }}
+          className="mt-3 bg-(--m3-surface-container-lowest) hover:bg-(--m3-surface-container-low)"
+        />
+
+        <SettingToggleItem
+          id="autoPreloadAudio"
+          name={t('commonSettings.autoPreloadAudio')}
+          enabled={settings.autoPreloadAudio}
+          onToggle={(checked) => {
+            updateSettings({ autoPreloadAudio: checked });
           }}
           className="mt-3 bg-(--m3-surface-container-lowest) hover:bg-(--m3-surface-container-low)"
         />
