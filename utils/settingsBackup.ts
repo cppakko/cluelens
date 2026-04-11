@@ -101,6 +101,7 @@ function normalizeCommonSettings(value: unknown): CommonSettings {
     ttsProvider: typeof prev.ttsProvider === 'string' && validTtsProviders.has(prev.ttsProvider)
       ? prev.ttsProvider as CommonSettings['ttsProvider']
       : 'webSpeech',
+    autoSearch: normalizeBoolean(prev.autoSearch, false),
   };
 }
 

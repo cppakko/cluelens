@@ -14,6 +14,7 @@ export interface CommonSettings {
   autoPreloadAudio: boolean;
   autoPlayAudio: boolean;
   ttsProvider: TtsProvider;
+  autoSearch: boolean;
 }
 
 export const commonSettingsDefault: CommonSettings = {
@@ -23,6 +24,7 @@ export const commonSettingsDefault: CommonSettings = {
   autoPreloadAudio: false,
   autoPlayAudio: false,
   ttsProvider: 'webSpeech',
+  autoSearch: false,
 };
 
 export const commonSettingsStorage = storage.defineItem<CommonSettings>(

@@ -59,7 +59,9 @@
         "ttsProvider": "TTS service",
         "ttsProviderDesc": "Select the text-to-speech engine used for auto pronunciation.",
         "ttsWebSpeech": "Web Speech API (browser built-in)",
-        "ttsLingva": "Lingva Translate TTS"
+        "ttsLingva": "Lingva Translate TTS",
+        "autoSearch": "Auto search on selection",
+        "autoSearchDesc": "Automatically look up words when text is selected, without clicking the popup icon."
     },
     "fontSettings": {
         "title": "Custom Font",

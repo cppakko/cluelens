@@ -59,7 +59,9 @@
         "ttsProvider": "TTS サービス",
         "ttsProviderDesc": "自動発音に使用するテキスト読み上げエンジンを選択します。",
         "ttsWebSpeech": "Web Speech API（ブラウザ内蔵）",
-        "ttsLingva": "Lingva Translate TTS"
+        "ttsLingva": "Lingva Translate TTS",
+        "autoSearch": "選択時に自動検索",
+        "autoSearchDesc": "テキスト選択時にポップアップアイコンをクリックせずに自動で辞書検索します。"
     },
     "fontSettings": {
         "title": "カスタムフォント",

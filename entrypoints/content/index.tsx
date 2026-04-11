@@ -8,7 +8,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { initI18n } from '@/i18n';
 import { computeZoomCorrection } from '@/utils/pageScaleCorrection';
 import DictPanel from '~/components/panel/DictPanel';
-import { fontConfigStorage, type FontConfig } from '@/utils/storage';
+import { fontConfigStorage, commonSettingsStorage, type FontConfig } from '@/utils/storage';
 import { loadFont, unloadFont } from '@/utils/fontLoader';
 import { sendMessage } from '@/utils/messaging';
 
@@ -19,6 +19,7 @@ function ContentApp() {
   const rootRef = useRef<HTMLDivElement>(null);
   const nextPanelPosRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const panelShowRef = useRef(false);
+  const autoSearchRef = useRef(false);
 
   const isNodeInsidePanel = useCallback((node?: Node | null) => {
     if (!node || !rootRef.current) {
@@ -29,12 +30,33 @@ function ContentApp() {
   const isMouseDownInsideRef = useRef(false);
   const pointerFromPanelRef = useRef(false);
 
+  const triggerSearch = useCallback((query: string, targetPanelPos: { x: number, y: number }) => {
+    setIconPos(prev => ({ ...prev, show: false }));
+    sendMessage('routeSearchToSidePanel', { query }).then((routed) => {
+      if (!routed) {
+        setPanelPos({ ...targetPanelPos, show: true });
+      }
+    }).catch(() => {
+      setPanelPos({ ...targetPanelPos, show: true });
+    });
+  }, []);
+
   useEffect(() => {
     panelShowRef.current = panelPos.show;
     if (!panelPos.show) {
       pointerFromPanelRef.current = false;
     }
   }, [panelPos.show]);
+
+  useEffect(() => {
+    commonSettingsStorage.getValue().then((s) => {
+      autoSearchRef.current = s.autoSearch;
+    });
+    const unwatch = commonSettingsStorage.watch((s) => {
+      autoSearchRef.current = s.autoSearch;
+    });
+    return () => { unwatch(); };
+  }, []);
 
   useEffect(() => {
     const handleMouseDown = (event: MouseEvent) => {
@@ -102,16 +124,10 @@ function ContentApp() {
 
       setText(text);
 
-      if (panelShowRef.current) {
-        sendMessage('routeSearchToSidePanel', { query: text }).then((routed) => {
-          if (!routed) {
-            setPanelPos({ ...panelLoc, show: true });
-          }
-          setIconPos(prev => ({ ...prev, show: false }));
-        }).catch(() => {
-          setPanelPos({ ...panelLoc, show: true });
-          setIconPos(prev => ({ ...prev, show: false }));
-        });
+      const shouldSearchImmediately = panelShowRef.current || autoSearchRef.current;
+
+      if (shouldSearchImmediately) {
+        triggerSearch(text, panelLoc);
       } else {
         setIconPos({ ...iconLoc, show: true });
       }
@@ -125,17 +141,10 @@ function ContentApp() {
     return () => {
       textSelectionListener.stopListening();
     };
-  }, []);
+  }, [isNodeInsidePanel, triggerSearch]);
 
   const handleIconClick = () => {
-    setIconPos(prev => ({ ...prev, show: false }));
-    sendMessage('routeSearchToSidePanel', { query: text }).then((routed) => {
-      if (!routed) {
-        setPanelPos({ ...nextPanelPosRef.current, show: true });
-      }
-    }).catch(() => {
-      setPanelPos({ ...nextPanelPosRef.current, show: true });
-    });
+    triggerSearch(text, nextPanelPosRef.current);
   };
 
   const handlePanelClose = () => {

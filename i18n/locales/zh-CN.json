@@ -59,7 +59,9 @@
         "ttsProvider": "TTS 服务源",
         "ttsProviderDesc": "选择用于自动发音的语音合成引擎。",
         "ttsWebSpeech": "Web Speech API（浏览器内建）",
-        "ttsLingva": "Lingva Translate TTS"
+        "ttsLingva": "Lingva Translate TTS",
+        "autoSearch": "划词自动搜索",
+        "autoSearchDesc": "选中文本后自动查词，无需点击弹出图标。"
     },
     "fontSettings": {
         "title": "自定义字体",
