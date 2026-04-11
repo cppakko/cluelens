@@ -24,7 +24,7 @@ function AboutPage() {
           </div>
           <div>
             <p className="text-base font-semibold text-(--m3-on-surface)">ClueLens</p>
-            <p className="mt-0.5 text-sm text-(--m3-on-surface-variant)">{t('options.version', { version: '0.1.3' })}</p>
+            <p className="mt-0.5 text-sm text-(--m3-on-surface-variant)">{t('options.version', { version: '0.1.4' })}</p>
           </div>
         </div>
       </div>

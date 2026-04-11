@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/cppakko/cluelens/releases"><img src="https://img.shields.io/badge/version-v0.1.3-blue.svg" alt="Version" /></a>
+  <a href="https://github.com/cppakko/cluelens/releases"><img src="https://img.shields.io/badge/version-v0.1.4-blue.svg" alt="Version" /></a>
   <a href="https://img.shields.io/badge/platform-Chrome%20%7C%20Edge%20%7C%20Firefox-brightgreen.svg"><img src="https://img.shields.io/badge/platform-Chrome%20%7C%20Edge%20%7C%20Firefox-brightgreen.svg" alt="Platform" /></a>
   <a href="https://github.com/cppakko/cluelens/blob/main/LICENSE"><img src="https://img.shields.io/github/license/cppakko/cluelens" alt="License" /></a>
   <a href="https://linux.do" alt="LINUX DO"><img src="https://shorturl.at/ggSqS" /></a>
