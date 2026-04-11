@@ -16,7 +16,7 @@ export default defineConfig({
         matches: ['<all_urls>'],
       },
     ],
-    permissions: ['storage', 'commands', 'tabs'],
+    permissions: ['storage', 'commands', 'tabs', 'contextMenus', 'sidePanel'],
     commands: {
       "open_panel": {
         description: "__MSG_open_panel_description__",

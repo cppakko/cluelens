@@ -8,6 +8,14 @@ export interface BackgroundMessagingProtocolMap {
   searchResult(payload: { dictId: DictID; data: unknown[]; errorMessage?: string }): void;
   popupSearch(payload: { query: string; requestId: number; dictIds?: DictID[] }): void;
   focusPopupInput(): void;
+  routeSearchToSidePanel(payload: { query: string; dictIds?: DictID[] }): boolean;
 }
 
 export const { onMessage, sendMessage } = defineExtensionMessaging<BackgroundMessagingProtocolMap>();
+
+export interface SidePanelPortMessage {
+  type: 'search' | 'focusInput';
+  query?: string;
+  requestId?: number;
+  dictIds?: DictID[];
+}

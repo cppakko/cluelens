@@ -5,8 +5,15 @@ import { detectTextLanguage } from '@/utils/detectLanguage';
 import { HttpError } from '@/utils/fetchHtml';
 import { resolveTargetLanguage } from '@/utils/languageUtils';
 import { onMessage, sendMessage } from '@/utils/messaging';
+import { attachSidePanelPort, routeToSidePanel } from '@/utils/sidePanelRouter';
 
 export default defineBackground(() => {
+  browser.runtime.onConnect.addListener((port) => {
+    if (port.name === 'sidepanel') {
+      attachSidePanelPort(port);
+    }
+  });
+
   onMessage('openPopupQuery', async (message) => {
     const { query, dictIds } = message.data;
     await openPanel(query, dictIds);
@@ -68,54 +75,88 @@ export default defineBackground(() => {
       await openPanel();
     }
   });
+
+  browser.contextMenus.create({
+    id: 'toggle-side-panel',
+    title: browser.i18n.getMessage('toggle_side_panel_description') || 'Open side panel',
+    contexts: ['all'],
+  });
+
+  browser.contextMenus.onClicked.addListener(async (info, tab) => {
+    if (info.menuItemId === 'toggle-side-panel') {
+      const tabId = tab?.id;
+      if (tabId) {
+        try {
+          await browser.sidePanel.open({ tabId });
+        } catch (err) {
+          console.error('Failed to toggle side panel:', err);
+        }
+      }
+    }
+  });
+
+  onMessage('routeSearchToSidePanel', (message) => {
+    const { query, dictIds } = message.data;
+    return routeToSidePanel(query, Date.now(), dictIds);
+  });
 });
 
 
 async function openPanel(query?: string, dictIds?: DictID[]) {
   try {
-    const runtime = typeof browser !== 'undefined' ? browser.runtime : undefined;
-    const popupPath = '/popup.html';
     const trimmedQuery = query?.trim() ?? '';
     const requestId = Date.now();
 
-    if (!runtime) {
-      throw new Error('browser.runtime not available');
+    // If side panel is alive, route search there
+    if (routeToSidePanel(trimmedQuery, requestId, dictIds)) {
+      return;
     }
 
-    let url: string;
-    if (trimmedQuery) {
-      let params = `q=${encodeURIComponent(trimmedQuery)}&requestId=${requestId}`;
-      if (dictIds && dictIds.length > 0) {
-        params += `&dicts=${encodeURIComponent(dictIds.join(','))}`;
-      }
-      url = runtime.getURL(`${popupPath}?${params}`);
-    } else {
-      url = runtime.getURL(popupPath);
-    }
-
-    const allTabs = await browser.tabs.query({});
-    const tab = allTabs.find((t) =>
-      (t.url?.includes(popupPath)) ||
-      (t.pendingUrl?.includes(popupPath))
-    );
-
-    if (tab && tab.id !== undefined && tab.windowId !== undefined) {
-      await browser.windows.update(tab.windowId, { focused: true });
-      await browser.tabs.update(tab.id, { active: true });
-      try {
-        if (trimmedQuery) {
-          await sendMessage('popupSearch', { query: trimmedQuery, requestId, dictIds }, tab.id);
-        }
-        await sendMessage('focusPopupInput', undefined, tab.id);
-      }
-      catch (err) {
-        console.warn('Failed to send focus message to popup:', err);
-      }
-    } else {
-      await browser.windows.create({ url, type: 'popup', width: 460, height: 600 });
-    }
+    await openPopupWindow(trimmedQuery, requestId, dictIds);
   }
   catch (err) {
-    console.error('Failed to open popup window, falling back to messaging:', err);
+    console.error('Failed to open panel:', err);
+  }
+}
+
+async function openPopupWindow(trimmedQuery: string, requestId: number, dictIds?: DictID[]) {
+  const runtime = typeof browser !== 'undefined' ? browser.runtime : undefined;
+  const popupPath = '/popup.html';
+
+  if (!runtime) {
+    throw new Error('browser.runtime not available');
+  }
+
+  let url: string;
+  if (trimmedQuery) {
+    let params = `q=${encodeURIComponent(trimmedQuery)}&requestId=${requestId}`;
+    if (dictIds && dictIds.length > 0) {
+      params += `&dicts=${encodeURIComponent(dictIds.join(','))}`;
+    }
+    url = runtime.getURL(`${popupPath}?${params}`);
+  } else {
+    url = runtime.getURL(popupPath);
+  }
+
+  const allTabs = await browser.tabs.query({});
+  const tab = allTabs.find((t) =>
+    (t.url?.includes(popupPath)) ||
+    (t.pendingUrl?.includes(popupPath))
+  );
+
+  if (tab && tab.id !== undefined && tab.windowId !== undefined) {
+    await browser.windows.update(tab.windowId, { focused: true });
+    await browser.tabs.update(tab.id, { active: true });
+    try {
+      if (trimmedQuery) {
+        await sendMessage('popupSearch', { query: trimmedQuery, requestId, dictIds }, tab.id);
+      }
+      await sendMessage('focusPopupInput', undefined, tab.id);
+    }
+    catch (err) {
+      console.warn('Failed to send focus message to popup:', err);
+    }
+  } else {
+    await browser.windows.create({ url, type: 'popup', width: 460, height: 600 });
   }
 }

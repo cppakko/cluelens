@@ -10,6 +10,7 @@ import { computeZoomCorrection } from '@/utils/pageScaleCorrection';
 import DictPanel from '~/components/panel/DictPanel';
 import { fontConfigStorage, type FontConfig } from '@/utils/storage';
 import { loadFont, unloadFont } from '@/utils/fontLoader';
+import { sendMessage } from '@/utils/messaging';
 
 function ContentApp() {
   const [iconPos, setIconPos] = useState({ x: 0, y: 0, show: false });
@@ -102,8 +103,15 @@ function ContentApp() {
       setText(text);
 
       if (panelShowRef.current) {
-        setPanelPos({ ...panelLoc, show: true });
-        setIconPos(prev => ({ ...prev, show: false }));
+        sendMessage('routeSearchToSidePanel', { query: text }).then((routed) => {
+          if (!routed) {
+            setPanelPos({ ...panelLoc, show: true });
+          }
+          setIconPos(prev => ({ ...prev, show: false }));
+        }).catch(() => {
+          setPanelPos({ ...panelLoc, show: true });
+          setIconPos(prev => ({ ...prev, show: false }));
+        });
       } else {
         setIconPos({ ...iconLoc, show: true });
       }
@@ -120,8 +128,14 @@ function ContentApp() {
   }, []);
 
   const handleIconClick = () => {
-    setPanelPos({ ...nextPanelPosRef.current, show: true });
     setIconPos(prev => ({ ...prev, show: false }));
+    sendMessage('routeSearchToSidePanel', { query: text }).then((routed) => {
+      if (!routed) {
+        setPanelPos({ ...nextPanelPosRef.current, show: true });
+      }
+    }).catch(() => {
+      setPanelPos({ ...nextPanelPosRef.current, show: true });
+    });
   };
 
   const handlePanelClose = () => {

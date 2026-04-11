@@ -2,6 +2,9 @@
     "open_panel_description": {
         "message": "メインパネルを開く"
     },
+    "toggle_side_panel_description": {
+        "message": "サイドパネルを開く"
+    },
     "ext_name": {
         "message": "ClueLens BETA"
     },

@@ -2,6 +2,9 @@
     "open_panel_description": {
         "message": "打开主面板"
     },
+    "toggle_side_panel_description": {
+        "message": "打开侧边栏"
+    },
     "ext_name": {
         "message": "ClueLens BETA"
     },
