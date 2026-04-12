@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/icon.png" alt="ClueLens logo" width="120" height="120" />
+  <img src="../assets/icon.png" alt="ClueLens logo" width="120" height="120" />
 </p>
 
 <h1 align="center">ClueLens</h1>
@@ -30,11 +30,11 @@
 ## 截图
 
 <p align="center">
-  <img src="./assets/readme/preview.gif" alt="ClueLens preview" width="640" />
+  <img src="../assets/readme/preview.gif" alt="ClueLens preview" width="640" />
 </p>
 
 <p align="center">
-  <img src="./assets/readme/screenshot.png" alt="ClueLens screenshot" width="640" />
+  <img src="../assets/readme/screenshot.png" alt="ClueLens screenshot" width="640" />
 </p>
 
 ## 支持的字典和机翻
