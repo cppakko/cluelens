@@ -15,6 +15,18 @@
   <a href="https://linux.do" alt="LINUX DO"><img src="https://shorturl.at/ggSqS" /></a>
 </p>
 
+<p align="center">
+  English | <a href="./README_zh-CN.md">中文</a>
+</p>
+
+## Features
+
+- **Quick Word Lookup**: Select text on any web page to instantly view dictionary definitions and translations.
+- **Multi-Source Support**: Access a wide range of dictionaries, conventional translators, and AI-assisted tools simultaneously.
+- **Text-to-Speech (TTS)**: Listen to pronunciations for words and sentences directly from the panel.
+- **Flexible Interface**: Use it as an inline float panel, a browser popup, or a dedicated side panel based on your preference.
+- **Highly Customizable**: Freely reorder, toggle, and configure specific dictionaries and translation engines to fit your workflow.
+
 ## Preview
 
 <p align="center">
@@ -24,8 +36,6 @@
 <p align="center">
   <img src="./assets/readme/screenshot.png" alt="ClueLens screenshot" width="640" />
 </p>
-
-
 
 ## Supported Dictionaries
 
@@ -49,7 +59,6 @@
 ### AI-Assisted
 
 - OpenAI
-
 
 ## Install From Stores
 
