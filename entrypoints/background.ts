@@ -87,7 +87,12 @@ export default defineBackground(() => {
       const tabId = tab?.id;
       if (tabId) {
         try {
-          await browser.sidePanel.open({ tabId });
+          if (browser.sidebarAction?.open) {
+            await browser.sidebarAction.open();
+          } else {
+            await browser.sidePanel.open({ tabId });
+          }
+          
         } catch (err) {
           console.error('Failed to toggle side panel:', err);
         }
