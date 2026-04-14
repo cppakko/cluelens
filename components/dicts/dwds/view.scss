@@ -1,0 +1,213 @@
+.dwds-entry {
+  padding: 14px 10px 12px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+.dwds-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.dwds-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.dwds-meta {
+  margin: 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dwds-wortart {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--m3-primary, #0b57d0);
+  font-style: italic;
+}
+
+.dwds-ipa {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+
+.dwds-tabs {
+  margin-top: 10px;
+  gap: 0;
+  text-align: left;
+}
+
+.dwds-tabs-list {
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px;
+  row-gap: 3px;
+}
+
+.dwds-tabs-trigger {
+  flex: 0 0 auto;
+  font-size: 12px;
+  padding: 3px 8px;
+  height: 28px;
+}
+
+.dwds-tab-content {
+  padding: 12px 4px 4px;
+  text-align: left;
+}
+
+.dwds-single-section {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.dwds-richtext {
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--m3-on-surface, #222);
+  word-break: break-word;
+  text-align: left;
+}
+
+.dwds-richtext :where(p, ul, ol, dl, table, blockquote) {
+  margin: 0 0 10px;
+}
+
+.dwds-richtext :where(p:last-child, ul:last-child, ol:last-child, dl:last-child, table:last-child, blockquote:last-child) {
+  margin-bottom: 0;
+}
+
+.dwds-richtext :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.dwds-richtext :where(div, p, span, li, dd, dt, td, th) {
+  text-align: left !important;
+}
+
+.dwds-richtext :where(strong, b) {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+}
+
+.dwds-richtext :where(em, i) {
+  font-style: italic;
+}
+
+.dwds-richtext :where(a) {
+  color: var(--m3-primary, #0b57d0);
+  text-decoration: none;
+}
+
+.dwds-richtext :where(a:hover) {
+  text-decoration: underline;
+}
+
+.dwds-richtext :where(hr) {
+  border: none;
+  border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+  margin: 8px 0;
+}
+
+/* DWDS-specific styling for grammar blocks */
+.dwds-richtext .dwdswb-ft-block {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.dwds-richtext .dwdswb-ft-blocklabel {
+  font-style: italic;
+  color: var(--m3-on-surface-variant, #666);
+  margin-right: 6px;
+}
+
+.dwds-richtext .dwdswb-ft-blocktext {
+  color: var(--m3-on-surface, #222);
+}
+
+.dwds-richtext .dwdswb-ipa {
+  font-family: serif;
+}
+
+/* Lesart (meaning entry) styling */
+.dwds-richtext .dwdswb-lesart {
+  margin: 6px 0 6px 0;
+  padding-left: 0;
+}
+
+.dwds-richtext .dwdswb-lesart-n {
+  font-weight: 600;
+  color: var(--m3-primary, #0b57d0);
+  display: inline;
+  margin-right: 4px;
+}
+
+.dwds-richtext .dwdswb-lesart-content {
+  display: inline;
+}
+
+.dwds-richtext .dwdswb-lesart-def {
+  display: inline;
+}
+
+.dwds-richtext .dwdswb-definition {
+  color: var(--m3-on-surface, #222);
+}
+
+.dwds-richtext .dwdswb-verwendungsbeispiele {
+  margin: 4px 0 4px 16px;
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #555);
+}
+
+.dwds-richtext .dwdswb-block-label {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dwds-richtext .dwdswb-kompetenzbeispiel,
+.dwds-richtext .dwdswb-beleg {
+  margin: 2px 0;
+}
+
+.dwds-richtext .dwdswb-stichwort {
+  font-weight: 600;
+  color: var(--m3-primary, #0b57d0);
+}
+
+.dwds-richtext .dwdswb-paraphrase {
+  color: var(--m3-on-surface-variant, #666);
+  font-style: italic;
+}
+
+.dwds-richtext .dwdswb-diasystematik,
+.dwds-richtext .dwdswb-stilebene,
+.dwds-richtext .dwdswb-stilfaerbung,
+.dwds-richtext .dwdswb-gebrauchszeitraum {
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.dwds-richtext .dwdswb-fundstelle {
+  margin: 4px 0;
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #888);
+}
+
+.dwds-richtext .dwdswb-syntagmatik {
+  margin: 4px 0;
+  font-style: italic;
+}

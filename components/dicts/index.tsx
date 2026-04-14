@@ -127,6 +127,14 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     language: { type: 'all' },
     type: ModuleType.Dict,
   },
+  [DictID.Dwds]: {
+    id: DictID.Dwds,
+    displayName: 'DWDS',
+    displayNameKey: 'dict.dwds',
+    icon: 'https://www.dwds.de/favicon.ico',
+    language: { type: 'monolingual', languages: ['de'] },
+    type: ModuleType.Dict,
+  }
 };
 
 export const dictMetaList = Object.values(dictMetaMap);

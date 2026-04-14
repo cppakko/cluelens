@@ -11,6 +11,7 @@ export enum DictID {
   Wiktionary = 'wiktionary',
   Urban = 'urban',
   Omw = 'omw',
+  Dwds = 'dwds',
 }
 
 export enum ModuleType {

@@ -109,7 +109,8 @@
         "omw": "オープン多言語ワードネット",
         "dictionaryApi": "DictionaryAPI",
         "zdic": "Zdic",
-        "moegirl": "萌娘百科"
+        "moegirl": "萌娘百科",
+        "dwds": "DWDS ドイツ語辞書"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -122,6 +123,9 @@
     },
     "moegirl": {
         "source": "萌娘百科で開く"
+    },
+    "dwds": {
+        "requestFailed": "DWDSリクエスト失敗：{{status}} {{statusText}}"
     },
     "error": {
         "renderError": "レンダリング中にエラーが発生しました",

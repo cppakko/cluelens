@@ -109,7 +109,8 @@
         "deeplx": "DeepLx",
         "wiktionary": "Wiktionary",
         "urban": "Urban Dictionary",
-        "omw": "Open Multilingual Wordnet"
+        "omw": "Open Multilingual Wordnet",
+        "dwds": "DWDS"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -122,6 +123,9 @@
     },
     "moegirl": {
         "source": "Open in Moegirl"
+    },
+    "dwds": {
+        "requestFailed": "DWDS request failed: {{status}} {{statusText}}"
     },
     "error": {
         "renderError": "An error occurred during rendering",
