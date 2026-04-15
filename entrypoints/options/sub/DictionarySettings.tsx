@@ -43,8 +43,8 @@ function SortableItem(props: SortableItemProps) {
       ref={setNodeRef}
       style={style}
       className={cn(
-        "flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3 transition-[background-color,box-shadow] duration-200 hover:bg-(--m3-surface-container-low) hover:shadow-[0_14px_30px_color-mix(in_srgb,var(--m3-on-surface)_6%,transparent)]",
-        isDragging && "z-10 bg-(--m3-surface-container-lowest) shadow-[0_18px_36px_color-mix(in_srgb,var(--m3-primary)_14%,transparent)]"
+        "flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3 transition-[background-color,box-shadow] duration-200 hover:bg-(--m3-surface-container-high) hover:shadow-[0_2px_8px_color-mix(in_srgb,var(--m3-on-surface)_5%,transparent)]",
+        isDragging && "z-10 bg-(--m3-surface-container-lowest) shadow-[0_4px_16px_color-mix(in_srgb,var(--m3-primary)_10%,transparent)]"
       )}
     >
       <span
@@ -206,7 +206,7 @@ export default function DictionarySettings() {
 
   return (
     <div className="space-y-8">
-      <section className="overflow-hidden rounded-3xl bg-(--m3-surface-container-low)/56 p-3 shadow-[0_20px_50px_color-mix(in_srgb,var(--m3-on-surface)_6%,transparent)]">
+      <section className="overflow-hidden rounded-3xl bg-(--m3-surface-container-low)/56 p-3 shadow-[0_1px_3px_color-mix(in_srgb,var(--m3-on-surface)_8%,transparent),0_4px_12px_color-mix(in_srgb,var(--m3-on-surface)_4%,transparent)]">
         <div className="rounded-2xl bg-(--m3-secondary-container) px-4 py-3">
           <span className="text-xs font-semibold tracking-wider uppercase text-(--m3-on-secondary-container)">
             {t('dictSettings.enableDicts')}
@@ -252,7 +252,7 @@ export default function DictionarySettings() {
       </section>
 
       {enabledSettings.length > 0 && (
-        <section className="overflow-hidden rounded-3xl bg-(--m3-surface-container-low)/56 p-3 shadow-[0_20px_50px_color-mix(in_srgb,var(--m3-on-surface)_6%,transparent)]">
+        <section className="overflow-hidden rounded-3xl bg-(--m3-surface-container-low)/56 p-3 shadow-[0_1px_3px_color-mix(in_srgb,var(--m3-on-surface)_8%,transparent),0_4px_12px_color-mix(in_srgb,var(--m3-on-surface)_4%,transparent)]">
           <div className="rounded-2xl bg-(--m3-secondary-container) px-4 py-3">
             <span className="text-xs font-semibold tracking-wider uppercase text-(--m3-on-secondary-container)">
               {t('dictSettings.displayOrder')}

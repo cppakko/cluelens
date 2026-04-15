@@ -154,7 +154,7 @@ export function VocabularyPage() {
                     {filtered.map((entry) => (
                         <div
                             key={entry.id}
-                            className="group flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3.5 transition-all duration-200 hover:bg-(--m3-surface-container-low) hover:shadow-[0_14px_30px_color-mix(in_srgb,var(--m3-on-surface)_6%,transparent)]"
+                            className="group flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3.5 transition-all duration-200 hover:bg-(--m3-surface-container-high) hover:shadow-[0_2px_8px_color-mix(in_srgb,var(--m3-on-surface)_5%,transparent)]"
                         >
                             {/* Left: word + date */}
                             <div className="flex-1 min-w-0">

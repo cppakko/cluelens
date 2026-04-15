@@ -19,7 +19,7 @@ interface DictToggleItemProps {
 export function SettingToggleItem({ id, name, subtitle, languageBadges, iconSrc, enabled, onToggle, onConfigClick, className }: DictToggleItemProps) {
   const { t } = useTranslation();
   return (
-    <div className={cn("group flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3.5 transition-all duration-200 hover:bg-(--m3-surface-container-low) hover:shadow-[0_14px_30px_color-mix(in_srgb,var(--m3-on-surface)_6%,transparent)]", className)}>
+    <div className={cn("group flex items-center gap-3 rounded-2xl bg-(--m3-surface-container-lowest) px-4 py-3.5 transition-all duration-200 hover:bg-(--m3-surface-container-high) hover:shadow-[0_2px_8px_color-mix(in_srgb,var(--m3-on-surface)_5%,transparent)]", className)}>
       {iconSrc && <img src={iconSrc} alt="" className="h-10 w-10 rounded-2xl bg-(--m3-surface-container-low) p-1.5 shadow-sm" />}
       <div className="flex-1 min-w-0">
         <span className="text-sm font-medium text-(--m3-on-surface)">{name}</span>
