@@ -15,6 +15,7 @@ import {
 } from '~/components/ui/Dialog';
 import { SettingToggleItem } from './ui';
 import { useTranslation } from 'react-i18next';
+import { Plus } from 'lucide-react';
 
 interface SortableItemProps {
   id: string;
@@ -68,6 +69,7 @@ export default function DictionarySettings() {
   const [editingDictId, setEditingDictId] = useState<string | null>(null);
   const [subSettingsOpen, setSubSettingsOpen] = useState(false);
   const [ConfigView, setConfigView] = useState<ComponentType | null>(null);
+  const [addDictOpen, setAddDictOpen] = useState(false);
   const clearDialogTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -211,26 +213,41 @@ export default function DictionarySettings() {
           </span>
         </div>
         <div className="mt-3 space-y-2">
-          {dictMetaList.map((config) => {
-            const setting = settings.find((s) => s.id === config.id);
-            if (!setting) return null;
-            const badges = getLanguageBadges(config);
-            return (
-              <SettingToggleItem
-                key={setting.id}
-                id={setting.id}
-                name={config.displayNameKey ? t(config.displayNameKey) : config.displayName}
-                languageBadges={badges}
-                iconSrc={config.icon}
-                enabled={setting.enabled}
-                onToggle={(checked) => handleToggle(setting.id, checked)}
-                onConfigClick={hasDictConfigView(setting.id) ? () => {
-                  setEditingDictId(setting.id);
-                  setSubSettingsOpen(true);
-                } : undefined}
-              />
-            );
-          })}
+          {enabledSettings.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-8 text-(--m3-on-surface-variant)">
+              <p className="text-sm">{t('dictSettings.noEnabledDicts')}</p>
+            </div>
+          ) : (
+            enabledSettings.map((setting) => {
+              const config = dictMetaMap[setting.id as DictID];
+              if (!config) return null;
+              const badges = getLanguageBadges(config);
+              return (
+                <SettingToggleItem
+                  key={setting.id}
+                  id={setting.id}
+                  name={config.displayNameKey ? t(config.displayNameKey) : config.displayName}
+                  languageBadges={badges}
+                  iconSrc={config.icon}
+                  enabled={setting.enabled}
+                  onToggle={(checked) => handleToggle(setting.id, checked)}
+                  onConfigClick={hasDictConfigView(setting.id) ? () => {
+                    setEditingDictId(setting.id);
+                    setSubSettingsOpen(true);
+                  } : undefined}
+                />
+              );
+            })
+          )}
+        </div>
+        <div className="mt-3 flex justify-center">
+          <button
+            onClick={() => setAddDictOpen(true)}
+            className="flex items-center gap-2 rounded-full bg-(--m3-primary-container) px-5 py-2.5 text-sm font-medium text-(--m3-on-primary-container) shadow-sm transition-all duration-200 hover:shadow-md hover:brightness-95 active:scale-[0.97]"
+          >
+            <Plus className="h-4.5 w-4.5" />
+            {t('dictSettings.addDict')}
+          </button>
         </div>
       </section>
 
@@ -276,6 +293,34 @@ export default function DictionarySettings() {
         </section>
       )}
 
+      <Dialog open={addDictOpen} onOpenChange={setAddDictOpen} aria-describedby='add-dict panel'>
+        <DialogContent className="flex max-h-[calc(100vh-32px)] flex-col overflow-hidden sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>{t('dictSettings.addDict')}</DialogTitle>
+          </DialogHeader>
+          <div className="min-h-0 flex-1 overflow-y-auto py-2 custom-scrollbar">
+            <div className="space-y-2">
+              {dictMetaList.map((config) => {
+                const setting = settings.find((s) => s.id === config.id);
+                if (!setting) return null;
+                const badges = getLanguageBadges(config);
+                return (
+                  <SettingToggleItem
+                    key={setting.id}
+                    id={setting.id}
+                    name={config.displayNameKey ? t(config.displayNameKey) : config.displayName}
+                    languageBadges={badges}
+                    iconSrc={config.icon}
+                    enabled={setting.enabled}
+                    onToggle={(checked) => handleToggle(setting.id, checked)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <Dialog open={subSettingsOpen} onOpenChange={(open) => setSubSettingsOpen(open)} aria-describedby='sub-setting panel'>
         <DialogContent className="flex max-h-[calc(100vh-32px)] flex-col overflow-hidden sm:max-w-lg">
           {editingDictId && (
@@ -283,7 +328,7 @@ export default function DictionarySettings() {
               <DialogHeader>
                 <DialogTitle>{(() => { const c = dictMetaMap[editingDictId as DictID]; return c?.displayNameKey ? t(c.displayNameKey) : c?.displayName; })()}</DialogTitle>
               </DialogHeader>
-              <div className="min-h-0 flex-1 overflow-y-auto py-4">
+              <div className="min-h-0 flex-1 overflow-y-auto py-4 custom-scrollbar">
                 {ConfigView ? <ConfigView /> : null}
               </div>
             </>

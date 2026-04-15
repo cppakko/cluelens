@@ -80,7 +80,10 @@
         "title": "辞書管理",
         "enableDicts": "辞書を有効にする",
         "displayOrder": "表示順序",
-        "displayOrderDesc": "ドラッグして辞書の表示順序を変更"
+        "displayOrderDesc": "ドラッグして辞書の表示順序を変更",
+        "addDict": "辞書を追加",
+        "noEnabledDicts": "有効な辞書がありません。下のボタンをタップして追加してください。",
+        "allDictsEnabled": "すべての辞書が有効になっています。"
     },
     "language": {
         "all": "すべての言語",

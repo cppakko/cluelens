@@ -80,7 +80,10 @@
         "title": "词典管理",
         "enableDicts": "启用词典",
         "displayOrder": "显示顺序",
-        "displayOrderDesc": "拖拽调整词典在面板中的显示顺序"
+        "displayOrderDesc": "拖拽调整词典在面板中的显示顺序",
+        "addDict": "添加词典",
+        "noEnabledDicts": "暂未启用任何词典，点击下方按钮添加",
+        "allDictsEnabled": "所有词典均已启用"
     },
     "language": {
         "all": "所有语言",

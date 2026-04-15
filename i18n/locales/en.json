@@ -80,7 +80,10 @@
         "title": "Dictionary Management",
         "enableDicts": "Enable dictionaries",
         "displayOrder": "Display order",
-        "displayOrderDesc": "Drag to reorder dictionaries in the panel"
+        "displayOrderDesc": "Drag to reorder dictionaries in the panel",
+        "addDict": "Add Dictionary",
+        "noEnabledDicts": "No dictionaries enabled. Tap the button below to add one.",
+        "allDictsEnabled": "All dictionaries are already enabled."
     },
     "language": {
         "all": "All languages",

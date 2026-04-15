@@ -164,6 +164,7 @@ body {
   flex: 1;
   min-height: 0;
   overflow: auto;
+  scrollbar-gutter: stable;
   transform-origin: top center;
   transition:
     opacity 180ms ease,
