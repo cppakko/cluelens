@@ -14,6 +14,8 @@ import dictionaryApiIcon from './dictionaryapi/icon.png';
 import zdicIcon from './zdic/icon.png';
 import moegirlIcon from './moegirl/icon.ico';
 import omwIcon from './omw/icon.png';
+import dwdsIcon from './dwds/icon.png';
+import cambridgeIcon from './cambridge/icon.png';
 
 export interface DictSearcher {
   search(text: string, options?: SearchOptions): Promise<unknown[]>;
@@ -131,7 +133,7 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     id: DictID.Dwds,
     displayName: 'DWDS',
     displayNameKey: 'dict.dwds',
-    icon: 'https://www.dwds.de/favicon.ico',
+    icon: dwdsIcon,
     language: { type: 'monolingual', languages: ['de'] },
     type: ModuleType.Dict,
   },
@@ -139,7 +141,7 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     id: DictID.Cambridge,
     displayName: 'Cambridge Dictionary',
     displayNameKey: 'dict.cambridge',
-    icon: 'https://dictionary.cambridge.org/external/images/favicon.ico?version=6.0.75',
+    icon: cambridgeIcon,
     language: {
       type: 'pairs',
       pairs: [
