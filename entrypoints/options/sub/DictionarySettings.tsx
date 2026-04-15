@@ -5,6 +5,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { dictSettingsStorage, DictSetting, mergeMissingDicts } from '@/utils/storage';
 import { dictMetaList, dictMetaMap, hasDictConfigView, loadDictConfigView } from '@/components/dicts';
 import { DictConfig, DictID } from '@/components/dicts/types';
+import type { Badge } from '@/components/ui/LanguageBadge';
 import { cn } from '@/utils/tailwindUtils';
 import {
   Dialog,
@@ -175,16 +176,16 @@ export default function DictionarySettings() {
     );
   }
 
-  const formatLanguage = (config: DictConfig): string => {
+  const getLanguageBadges = (config: DictConfig): Badge[] => {
     const lang = config.language;
     switch (lang.type) {
       case 'all':
-        return t('language.all');
+        return [{ label: t('language.all'), variant: 'all' }];
       case 'monolingual':
-        return lang.languages.map(code => t(`language.${code}`, code)).join(', ');
+        return lang.languages.map(code => ({ label: t(`language.${code}`, code) }));
       case 'pairs': {
         const seen = new Set<string>();
-        const parts: string[] = [];
+        const badges: Badge[] = [];
         for (const [from, to] of lang.pairs) {
           const key = [from, to].sort().join('-');
           if (seen.has(key)) continue;
@@ -192,9 +193,9 @@ export default function DictionarySettings() {
           const reverse = lang.pairs.some(([f, t]) => f === to && t === from);
           const fromLabel = t(`language.${from}`, from);
           const toLabel = t(`language.${to}`, to);
-          parts.push(reverse ? `${fromLabel} ↔ ${toLabel}` : `${fromLabel} → ${toLabel}`);
+          badges.push({ label: reverse ? `${fromLabel} ↔ ${toLabel}` : `${fromLabel} → ${toLabel}` });
         }
-        return parts.join(', ');
+        return badges;
       }
     }
   };
@@ -213,12 +214,13 @@ export default function DictionarySettings() {
           {dictMetaList.map((config) => {
             const setting = settings.find((s) => s.id === config.id);
             if (!setting) return null;
+            const badges = getLanguageBadges(config);
             return (
               <SettingToggleItem
                 key={setting.id}
                 id={setting.id}
                 name={config.displayNameKey ? t(config.displayNameKey) : config.displayName}
-                subtitle={formatLanguage(config)}
+                languageBadges={badges}
                 iconSrc={config.icon}
                 enabled={setting.enabled}
                 onToggle={(checked) => handleToggle(setting.id, checked)}

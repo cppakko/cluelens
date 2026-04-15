@@ -87,11 +87,22 @@
         "en": "English",
         "ja": "Japanese",
         "zh": "Chinese",
+        "zh-Hant": "Chinese (Traditional)",
         "ko": "Korean",
         "fr": "French",
         "de": "German",
         "es": "Spanish",
-        "ru": "Russian"
+        "ru": "Russian",
+        "da": "Danish",
+        "nl": "Dutch",
+        "id": "Indonesian",
+        "it": "Italian",
+        "no": "Norwegian",
+        "pl": "Polish",
+        "pt": "Portuguese",
+        "sv": "Swedish",
+        "pairSummary": "{{from}} → {{count}} languages",
+        "pairSummaryMore": "+{{count}} more"
     },
     "ui": {
         "configure": "Configure {{name}}"
