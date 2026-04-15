@@ -110,7 +110,8 @@
         "wiktionary": "Wiktionary",
         "urban": "Urban Dictionary",
         "omw": "Open Multilingual Wordnet",
-        "dwds": "DWDS"
+        "dwds": "DWDS",
+        "cambridge": "Cambridge Dictionary"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -171,6 +172,10 @@
         "displayLanguage": "Display language",
         "displayLanguageDesc": "Select the content language version for Wiktionary."
     },
+    "cambridgeConfig": {
+        "langPair": "Language pair",
+        "langPairDesc": "Select the bilingual language pair for Cambridge Dictionary."
+    },
     "omwConfig": {
         "lang": "Search language",
         "langDesc": "The language used for word lookup. 'Auto-detect' will determine the language from input text.",
@@ -189,7 +194,8 @@
         "zdicRequestFailed": "Zdic request failed: {{status}} {{statusText}}",
         "moegirlRequestFailed": "Moegirl request failed: {{status}} {{statusText}}",
         "jishoUnexpectedStructure": "Unexpected HTML structure: missing #primary or #secondary elements",
-        "urbanRequestFailed": "Urban Dictionary request failed: {{status}} {{statusText}}"
+        "urbanRequestFailed": "Urban Dictionary request failed: {{status}} {{statusText}}",
+        "cambridgeRequestFailed": "Cambridge Dictionary request failed: {{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "Follow browser language"

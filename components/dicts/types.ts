@@ -12,6 +12,7 @@ export enum DictID {
   Urban = 'urban',
   Omw = 'omw',
   Dwds = 'dwds',
+  Cambridge = 'cambridge',
 }
 
 export enum ModuleType {

@@ -4,6 +4,7 @@ import { OpenAIConfig, openAIConfigDefault } from '@/components/dicts/openai/typ
 import { DeeplxConfig, deeplxConfigDefault } from '@/components/dicts/deeplx/types';
 import { WiktionaryConfig, defaultWiktionaryConfig } from '@/components/dicts/wiktionary/types';
 import { OmwConfig, defaultOmwConfig } from '@/components/dicts/omw/types';
+import { CambridgeConfig, defaultCambridgeConfig } from '@/components/dicts/cambridge/types';
 
 export type TtsProvider = 'webSpeech' | 'lingva';
 
@@ -124,6 +125,14 @@ export const omwConfigStorage = storage.defineItem<OmwConfig>(
   'local:omwConfig',
   {
     fallback: defaultOmwConfig,
+    version: 1,
+  }
+);
+
+export const cambridgeConfigStorage = storage.defineItem<CambridgeConfig>(
+  'local:cambridgeConfig',
+  {
+    fallback: defaultCambridgeConfig,
     version: 1,
   }
 );

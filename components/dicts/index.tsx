@@ -134,6 +134,22 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     icon: 'https://www.dwds.de/favicon.ico',
     language: { type: 'monolingual', languages: ['de'] },
     type: ModuleType.Dict,
+  },
+  [DictID.Cambridge]: {
+    id: DictID.Cambridge,
+    displayName: 'Cambridge Dictionary',
+    displayNameKey: 'dict.cambridge',
+    icon: 'https://dictionary.cambridge.org/external/images/favicon.ico?version=6.0.75',
+    language: {
+      type: 'pairs',
+      pairs: [
+        ['en', 'zh'], ['en', 'zh-Hant'], ['en', 'da'], ['en', 'nl'],
+        ['en', 'fr'], ['en', 'de'], ['en', 'id'], ['en', 'it'],
+        ['en', 'ja'], ['en', 'no'], ['en', 'pl'], ['en', 'pt'],
+        ['en', 'es'], ['en', 'sv'],
+      ],
+    },
+    type: ModuleType.Dict,
   }
 };
 

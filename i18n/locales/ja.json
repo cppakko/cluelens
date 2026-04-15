@@ -110,7 +110,8 @@
         "dictionaryApi": "DictionaryAPI",
         "zdic": "Zdic",
         "moegirl": "萌娘百科",
-        "dwds": "DWDS ドイツ語辞書"
+        "dwds": "DWDS ドイツ語辞書",
+        "cambridge": "ケンブリッジ辞書"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -171,6 +172,10 @@
         "displayLanguage": "表示言語",
         "displayLanguageDesc": "Wiktionary のコンテンツ言語バージョンを選択します。"
     },
+    "cambridgeConfig": {
+        "langPair": "言語ペア",
+        "langPairDesc": "ケンブリッジ辞書で使用するバイリンガル言語ペアを選択します。"
+    },
     "omwConfig": {
         "lang": "検索言語",
         "langDesc": "単語検索に使用する言語。「自動検出」は入力テキストから言語を判定します。",
@@ -189,7 +194,8 @@
         "zdicRequestFailed": "Zdic リクエスト失敗: {{status}} {{statusText}}",
         "jishoUnexpectedStructure": "予期しない HTML 構造：#primary または #secondary 要素が見つかりません",
         "moegirlRequestFailed": "萌娘百科リクエスト失敗: {{status}} {{statusText}}",
-        "urbanRequestFailed": "Urban Dictionary リクエスト失敗: {{status}} {{statusText}}"
+        "urbanRequestFailed": "Urban Dictionary リクエスト失敗: {{status}} {{statusText}}",
+        "cambridgeRequestFailed": "ケンブリッジ辞書リクエスト失敗: {{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "ブラウザの言語に従う"

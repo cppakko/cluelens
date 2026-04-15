@@ -110,7 +110,8 @@
         "dictionaryApi": "DictionaryAPI",
         "zdic": "汉典",
         "moegirl": "萌娘百科",
-        "dwds": "DWDS 德语词典"
+        "dwds": "DWDS 德语词典",
+        "cambridge": "剑桥词典"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -171,6 +172,10 @@
         "displayLanguage": "显示语言",
         "displayLanguageDesc": "选择 Wiktionary 词典的内容语言版本。"
     },
+    "cambridgeConfig": {
+        "langPair": "语言对",
+        "langPairDesc": "选择剑桥词典使用的双语语言对。"
+    },
     "omwConfig": {
         "lang": "搜索语言",
         "langDesc": "用于查词的语言。「自动检测」会根据输入文本自动判断语言。",
@@ -189,7 +194,8 @@
         "zdicRequestFailed": "汉典请求失败: {{status}} {{statusText}}",
         "moegirlRequestFailed": "萌娘百科请求失败: {{status}} {{statusText}}",
         "jishoUnexpectedStructure": "意外的 HTML 结构：缺少 #primary 或 #secondary 元素",
-        "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}"
+        "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}",
+        "cambridgeRequestFailed": "剑桥词典请求失败：{{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "跟随浏览器语言"
