@@ -28,6 +28,27 @@ function resolveUrl(rawValue: string, baseUrl?: string) {
   }
 }
 
+function resolveSrcset(rawValue: string, baseUrl?: string) {
+  if (!rawValue || !baseUrl) {
+    return rawValue;
+  }
+
+  return rawValue
+    .split(',')
+    .map((entry) => entry.trim())
+    .filter(Boolean)
+    .map((entry) => {
+      const match = entry.match(/^(\S+)(\s+.+)?$/);
+      if (!match) {
+        return entry;
+      }
+
+      const [, url, descriptor = ''] = match;
+      return `${resolveUrl(url, baseUrl)}${descriptor}`;
+    })
+    .join(', ');
+}
+
 function isSafeUrl(rawValue: string) {
   if (!rawValue) {
     return false;
@@ -53,6 +74,14 @@ function shouldKeepAttribute(name: string, value: string) {
 
   if (name === 'src' || name === 'href') {
     return isSafeUrl(value);
+  }
+
+  if (name === 'srcset') {
+    return value
+      .split(',')
+      .map((entry) => entry.trim().split(/\s+/, 1)[0])
+      .filter(Boolean)
+      .every((url) => isSafeUrl(url));
   }
 
   if (name === 'target') {
@@ -92,7 +121,9 @@ function sanitizeElement(element: Element, baseUrl?: string) {
     const originalValue = attribute.value.trim();
     const value = name === 'src' || name === 'href'
       ? resolveUrl(originalValue, baseUrl)
-      : originalValue;
+      : name === 'srcset'
+        ? resolveSrcset(originalValue, baseUrl)
+        : originalValue;
 
     if (value !== originalValue) {
       element.setAttribute(attribute.name, value);

@@ -5,6 +5,7 @@ This guide shows the shortest way to add a new module under `components/dicts`.
 Core idea:
 
 - `search.ts` gets data
+- optional `loadDetail()` in `search.ts` fetches a selected candidate later
 - `view.tsx` renders data
 - `configView.tsx` is only for settings
 - `settingBackup.ts` for backup/restore setiings
@@ -26,6 +27,15 @@ Examples: `bing`, `jisho`, `wiktionary`, `urban`
 - `search.ts` returns structured objects
 - add `types.ts`
 - add `view.tsx`
+
+### Deferred-detail dictionary
+
+Use this when the site search returns many candidate entries and each candidate needs a separate request.
+
+- `search.ts` returns candidate objects only
+- user picks one candidate in `view.tsx`
+- `view.tsx` calls `sendMessage('loadDictDetail', { dictId, payload })`
+- optional `loadDetail(payload)` in `search.ts` fetches and parses the chosen entry only
 
 ## Minimum Steps
 
@@ -86,12 +96,35 @@ export async function search(text: string): Promise<YourDictResult[]> {
 }
 ```
 
+Deferred-detail example:
+
+```ts
+export interface YourDictCandidate {
+  id: string;
+  title: string;
+  summary?: string;
+}
+
+export async function search(text: string): Promise<YourDictCandidate[]> {
+  const query = text.trim();
+  if (!query) return [];
+
+  return [{ id: 'entry-1', title: query }];
+}
+
+export async function loadDetail(payload: unknown): Promise<unknown> {
+  const { id } = payload as { id: string };
+  return { id, html: '<div>...</div>' };
+}
+```
+
 Keep in mind:
 
 - call `trim()`
 - return `[]` for empty input
 - translators may use `options?.targetLang`
 - keep fetching logic in `search.ts`
+- use deferred detail loading when the source site has many candidate pages
 
 ### 4. Add the renderer
 
@@ -106,6 +139,39 @@ export function ResultsView({ data }: { data: unknown[] }) {
 ```
 
 If the result is structured, create `view.tsx`.
+
+For deferred detail loading, keep candidate list state inside `view.tsx` and request details on click:
+
+```tsx
+import { useState } from 'react';
+import { sendMessage } from '@/utils/messaging';
+import { DictID } from '../types';
+
+export function ResultsView({ data }: { data: unknown[] }) {
+  const candidates = data as Array<{ id: string; title: string }>;
+  const [detailById, setDetailById] = useState<Record<string, unknown>>({});
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+
+  async function handleSelect(id: string) {
+    setSelectedId(id);
+    if (detailById[id]) return;
+
+    setLoadingId(id);
+    const result = await sendMessage('loadDictDetail', {
+      dictId: DictID.YourDict,
+      payload: { id },
+    });
+    setLoadingId(null);
+
+    if (result?.data !== undefined) {
+      setDetailById((prev) => ({ ...prev, [id]: result.data }));
+    }
+  }
+
+  return null;
+}
+```
 
 ### 5. Register in `components/dicts/index.tsx`
 

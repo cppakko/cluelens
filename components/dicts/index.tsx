@@ -5,6 +5,7 @@ import { DictConfig, DictID, ModuleType, SearchOptions } from './types';
 import bingIcon from './bing/icon.png';
 import caiyunIcon from './caiyun/icon.png';
 import googleIcon from './google/icon.png';
+import greensIcon from './greens/icon.ico';
 import openaiIcon from './openai/icon.png';
 import jishoIcon from './jisho/icon.png';
 import deeplxIcon from './deeplx/icon.png';
@@ -20,6 +21,7 @@ import bingTranslateIcon from './bingtranslate/icon.png';
 
 export interface DictSearcher {
   search(text: string, options?: SearchOptions): Promise<unknown[]>;
+  loadDetail?(payload: unknown): Promise<unknown>;
 }
 
 export type DictRenderer = {
@@ -57,6 +59,14 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     icon: googleIcon,
     language: { type: 'all' },
     type: ModuleType.Translator,
+  },
+  [DictID.Greens]: {
+    id: DictID.Greens,
+    displayName: "Green's Dictionary of Slang",
+    displayNameKey: 'dict.greens',
+    icon: greensIcon,
+    language: { type: 'monolingual', languages: ['en'] },
+    type: ModuleType.Dict,
   },
   [DictID.OpenAI]: {
     id: DictID.OpenAI,

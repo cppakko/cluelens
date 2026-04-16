@@ -126,6 +126,7 @@
         "bing": "必应词典",
         "caiyun": "彩云小译",
         "google": "谷歌翻译",
+        "greens": "Green's 俚语词典",
         "longman": "朗文词典",
         "openai": "OpenAI",
         "jisho": "Jisho",
@@ -151,6 +152,16 @@
     },
     "moegirl": {
         "source": "打开萌娘百科"
+    },
+    "greens": {
+        "selectPrompt": "请选择一个词条后再加载详情。",
+        "expandHint": "展开候选列表后可以重新选择词条。",
+        "loading": "正在加载词条详情...",
+        "loadFailed": "加载该词条失败。",
+        "expandCandidates": "展开候选",
+        "collapseCandidates": "折叠候选",
+        "selectedEntry": "已选择",
+        "subentry": "子词条"
     },
     "dwds": {
         "requestFailed": "DWDS 请求失败：{{status}} {{statusText}}"
@@ -222,6 +233,7 @@
         "moegirlRequestFailed": "萌娘百科请求失败: {{status}} {{statusText}}",
         "jishoUnexpectedStructure": "意外的 HTML 结构：缺少 #primary 或 #secondary 元素",
         "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}",
+        "greensRequestFailed": "Green's Dictionary 请求失败：{{status}} {{statusText}}",
         "cambridgeRequestFailed": "剑桥词典请求失败：{{status}} {{statusText}}",
         "bingTranslateConfigFailed": "获取必应翻译配置失败，请稍后重试。",
         "bingTranslateRequestFailed": "必应翻译请求失败：{{status}} {{statusText}}",

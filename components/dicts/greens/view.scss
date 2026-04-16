@@ -1,0 +1,315 @@
+.greens-dict {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.625rem;
+    text-align: left;
+}
+
+.greens-candidate-panel {
+    background: var(--m3-surface-container-low);
+    border: 1px solid color-mix(in srgb, var(--m3-outline-variant) 32%, transparent);
+    border-radius: 0.85rem;
+    overflow: hidden;
+}
+
+.greens-summary {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.72rem 0.8rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--m3-outline-variant) 24%, transparent);
+}
+
+.greens-summary-row {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.greens-summary-row-end {
+    justify-content: flex-end;
+}
+
+.greens-summary-count {
+    color: var(--m3-on-surface);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.greens-summary-hint,
+.greens-summary-selection {
+    color: var(--m3-on-surface-variant);
+    display: inline-block;
+    font-size: 0.74rem;
+    line-height: 1.4;
+}
+
+.greens-toggle {
+    align-items: center;
+    appearance: none;
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--m3-outline-variant) 45%, transparent);
+    border-radius: 9999px;
+    color: var(--m3-on-surface-variant);
+    cursor: pointer;
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 1.9rem;
+    justify-content: center;
+    padding: 0;
+    width: 1.9rem;
+}
+
+.greens-toggle:hover {
+    background: color-mix(in srgb, var(--m3-on-surface) 5%, transparent);
+}
+
+.greens-candidate-list-wrap {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 220ms ease, opacity 220ms ease;
+}
+
+.greens-candidate-list-wrap.is-collapsed {
+    grid-template-rows: 0fr;
+    opacity: 0.72;
+}
+
+.greens-candidate-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 18rem;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.greens-candidate {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.72rem 0.8rem;
+    text-align: left;
+    transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.greens-candidate+.greens-candidate {
+    border-top: 1px solid color-mix(in srgb, var(--m3-outline-variant) 20%, transparent);
+}
+
+.greens-candidate:hover {
+    background: color-mix(in srgb, var(--m3-surface-container-high) 70%, var(--m3-surface-container-low));
+}
+
+.greens-candidate.is-selected {
+    background: color-mix(in srgb, var(--m3-secondary-container) 22%, var(--m3-surface-container-low));
+}
+
+.greens-candidate-head {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.greens-candidate-title {
+    color: var(--m3-on-surface);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.greens-candidate-pos {
+    color: var(--m3-on-surface-variant);
+    font-size: 0.74rem;
+    font-style: italic;
+}
+
+.greens-candidate-meta {
+    color: var(--m3-on-surface-variant);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+}
+
+.greens-candidate-meta span:not(:last-child)::after {
+    content: '·';
+    margin-left: 0.4rem;
+}
+
+.greens-candidate-summary {
+    color: var(--m3-on-surface);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.greens-candidate-loading {
+    color: var(--m3-on-surface-variant);
+    font-size: 0.72rem;
+}
+
+.greens-candidate-loading {
+    color: var(--m3-primary);
+    font-weight: 500;
+}
+
+.greens-feedback {
+    color: var(--m3-on-surface-variant);
+    font-size: 0.8rem;
+}
+
+.greens-error {
+    color: var(--m3-error);
+}
+
+.greens-detail {
+    border-top: 1px solid color-mix(in srgb, var(--m3-outline-variant) 55%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+}
+
+@media (max-width: 520px) {
+    .greens-summary {
+        padding: 0.68rem 0.75rem;
+    }
+}
+
+.greens-richtext {
+    color: color-mix(in srgb, var(--m3-on-surface) 82%, #444);
+    font-size: 0.96rem;
+    line-height: 1.5;
+}
+
+.greens-richtext article {
+    display: block;
+}
+
+.greens-richtext article+article {
+    margin-top: 1rem;
+}
+
+.greens-richtext .head,
+.greens-richtext .subhw {
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.greens-richtext .pos,
+.greens-richtext .subpos,
+.greens-richtext .alts,
+.greens-richtext .etymology {
+    color: var(--m3-on-surface-variant);
+}
+
+.greens-richtext .subhw,
+.greens-richtext .subpos {
+    display: inline;
+}
+
+.greens-richtext .subentry>.subhw {
+    margin-right: 0.15rem;
+}
+
+.greens-richtext .subentry>.subpos,
+.greens-richtext .subentry>.pos,
+.greens-richtext .head .pos {
+    font-style: italic;
+}
+
+.greens-richtext .definition {
+    display: block;
+    margin-left: 2.8em;
+    text-indent: -1.8em;
+}
+
+.greens-richtext .definition+.definition {
+    margin-top: 1rem;
+}
+
+.greens-richtext .definition p {
+    margin: 0;
+}
+
+.greens-richtext .senseno {
+    font-weight: 700;
+}
+
+.greens-richtext .quotations {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-left: -1.1em;
+    margin-top: 0.35rem;
+    text-indent: 0;
+}
+
+.greens-richtext .qtable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.greens-richtext .qtable td {
+    border-top: 1px solid color-mix(in srgb, var(--m3-outline-variant) 45%, transparent);
+    padding: 0.45rem 0;
+    vertical-align: top;
+}
+
+.greens-richtext .qtable .date {
+    color: var(--m3-on-surface-variant);
+    padding-right: 0.5rem;
+    text-align: right;
+    white-space: nowrap;
+    width: 3.5rem;
+}
+
+.greens-richtext .qtable .flag {
+    padding-right: 0.35rem;
+    text-align: center;
+    width: 1.9rem;
+}
+
+.greens-richtext .qtable .flag img {
+    position: relative;
+    top: 2px;
+}
+
+.greens-richtext .qtable .quote {
+    line-height: 1.6;
+}
+
+.greens-richtext .author {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.02em;
+}
+
+.greens-richtext .qtable .quote cite {
+    font-style: italic;
+}
+
+.greens-richtext .xref,
+.greens-richtext a {
+    color: var(--m3-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.08em;
+}
+
+.greens-richtext .xhw {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.03em;
+}
+
+.greens-richtext .xref:hover,
+.greens-richtext a:hover {
+    text-decoration-thickness: 0.08em;
+}

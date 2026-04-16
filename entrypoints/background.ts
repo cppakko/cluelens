@@ -70,6 +70,28 @@ export default defineBackground(() => {
     );
   });
 
+  onMessage('loadDictDetail', async (message) => {
+    const { dictId, payload } = message.data;
+    const dictEngine = await loadDictSearcher(dictId);
+
+    if (!dictEngine?.loadDetail) {
+      return { errorMessage: `Dictionary ${dictId} does not support deferred detail loading.` };
+    }
+
+    try {
+      const data = await dictEngine.loadDetail(payload);
+      return { data };
+    }
+    catch (error) {
+      if (error instanceof HttpError && error.status === 404) {
+        return { data: undefined };
+      }
+
+      console.error(`Error loading deferred detail for dictionary ${dictId}:`, error);
+      return { errorMessage: error instanceof Error ? error.message : String(error) };
+    }
+  });
+
   browser.commands.onCommand.addListener(async (command) => {
     if (command === 'open_panel') {
       await openPanel();
@@ -92,7 +114,7 @@ export default defineBackground(() => {
           } else {
             await browser.sidePanel.open({ tabId });
           }
-          
+
         } catch (err) {
           console.error('Failed to toggle side panel:', err);
         }

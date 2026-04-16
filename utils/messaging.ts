@@ -6,6 +6,7 @@ export interface BackgroundMessagingProtocolMap {
   searchQuery(payload: { query: string; dictIds?: DictID[] }): void;
   searchDictList(dictIds: DictID[]): void;
   searchResult(payload: { dictId: DictID; data: unknown[]; errorMessage?: string }): void;
+  loadDictDetail(payload: { dictId: DictID; payload: unknown }): { data?: unknown; errorMessage?: string };
   popupSearch(payload: { query: string; requestId: number; dictIds?: DictID[] }): void;
   focusPopupInput(): void;
   routeSearchToSidePanel(payload: { query: string; dictIds?: DictID[] }): boolean;

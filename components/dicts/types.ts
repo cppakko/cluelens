@@ -2,6 +2,7 @@ export enum DictID {
   Bing = 'bing',
   Caiyun = 'caiyun',
   Google = 'google',
+  Greens = 'greens',
   OpenAI = 'openai',
   Jisho = 'jisho',
   DictionaryApi = 'dictionaryapi',
