@@ -2,47 +2,30 @@ import { useEffect, useRef, useState } from 'react';
 import DictionarySettings from './sub/DictionarySettings';
 import './App.scss';
 import { cn } from '@/utils/tailwindUtils';
-import { Settings, BookOpen, Info, Bookmark } from 'lucide-react';
-import { CommonSettings } from './sub/CommonSettings';
+import { Settings, Palette, Volume2, BookOpen, Info, Bookmark } from 'lucide-react';
+import { GeneralSettings } from './sub/GeneralSettings';
+import { AppearanceSettings } from './sub/AppearanceSettings';
+import { AudioSettings } from './sub/AudioSettings';
+import { AboutPage } from './sub/AboutPage';
 import { VocabularyPage } from './sub/VocabularyPage';
 import { useTranslation } from 'react-i18next';
 import Icon from '@/assets/icon.svg?react';
 import { generateMD3Theme } from '@/utils/md3Helper';
 import { themeColorStorage, darkModeStorage, DEFAULT_THEME_COLOR } from '@/utils/storage';
 
-function AboutPage() {
-  const { t } = useTranslation();
-  return (
-    <div className="space-y-6">
-      <div>
-        <p className="mt-1 text-sm text-(--m3-on-surface-variant)">{t('options.aboutSubtitle')}</p>
-      </div>
-      <div className="rounded-3xl bg-(--m3-surface-container) p-6">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center justify-center rounded-2xl text-(--m3-on-primary-container)">
-            <Icon className="h-14 w-14" />
-          </div>
-          <div>
-            <p className="text-base font-semibold text-(--m3-on-surface)">ClueLens</p>
-            <p className="mt-0.5 text-sm text-(--m3-on-surface-variant)">{t('options.version', { version: '0.1.4' })}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const menuItems = [
-  { textKey: 'options.common', icon: Settings, page: 'general', hint: 'Preferences' },
+  { textKey: 'options.general', icon: Settings, page: 'general', hint: 'Language & search' },
+  { textKey: 'options.appearance', icon: Palette, page: 'appearance', hint: 'Theme & fonts' },
+  { textKey: 'options.audio', icon: Volume2, page: 'audio', hint: 'Pronunciation' },
   { textKey: 'options.dictionaries', icon: BookOpen, page: 'dict', hint: 'Modules' },
   { textKey: 'options.vocabulary', icon: Bookmark, page: 'vocabulary', hint: 'Saved words' },
-  { textKey: 'options.about', icon: Info, page: 'about', hint: 'Extension info' },
+  { textKey: 'options.about', icon: Info, page: 'about', hint: 'Info & backup' },
 ];
 
 function App() {
   const { t } = useTranslation();
-  const [selectedIndex, setSelectedIndex] = useState(1);
-  const [renderedIndex, setRenderedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [renderedIndex, setRenderedIndex] = useState(0);
   const [isContentVisible, setIsContentVisible] = useState(true);
   const animationTimerRef = useRef<number | null>(null);
 
@@ -90,10 +73,12 @@ function App() {
 
   const renderContent = () => {
     switch (renderedIndex) {
-      case 0: return <CommonSettings />;
-      case 1: return <DictionarySettings />;
-      case 2: return <VocabularyPage />;
-      case 3: return <AboutPage />;
+      case 0: return <GeneralSettings />;
+      case 1: return <AppearanceSettings />;
+      case 2: return <AudioSettings />;
+      case 3: return <DictionarySettings />;
+      case 4: return <VocabularyPage />;
+      case 5: return <AboutPage />;
       default: return null;
     }
   };

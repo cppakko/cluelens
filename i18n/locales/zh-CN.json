@@ -20,6 +20,9 @@
     },
     "options": {
         "common": "通用",
+        "general": "通用",
+        "appearance": "外观",
+        "audio": "语音",
         "dictionaries": "词典",
         "vocabulary": "生词本",
         "about": "关于",
@@ -27,6 +30,15 @@
         "aboutTitle": "关于",
         "aboutSubtitle": "版本与项目信息",
         "version": "版本 {{version}}"
+    },
+    "generalSettings": {
+        "subtitle": "语言、搜索及基本偏好"
+    },
+    "appearanceSettings": {
+        "subtitle": "主题配色与字体"
+    },
+    "audioSettings": {
+        "subtitle": "发音与语音合成设置"
     },
     "commonSettings": {
         "title": "通用设置",

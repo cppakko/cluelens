@@ -20,6 +20,9 @@
     },
     "options": {
         "common": "Common",
+        "general": "General",
+        "appearance": "Appearance",
+        "audio": "Audio",
         "dictionaries": "Dictionaries",
         "vocabulary": "Vocabulary",
         "about": "About",
@@ -27,6 +30,15 @@
         "aboutTitle": "About",
         "aboutSubtitle": "Version & project info",
         "version": "Version {{version}}"
+    },
+    "generalSettings": {
+        "subtitle": "Language, search, and basic preferences"
+    },
+    "appearanceSettings": {
+        "subtitle": "Theme colors and fonts"
+    },
+    "audioSettings": {
+        "subtitle": "Pronunciation and TTS settings"
     },
     "commonSettings": {
         "title": "Common Settings",

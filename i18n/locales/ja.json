@@ -20,6 +20,9 @@
     },
     "options": {
         "common": "一般",
+        "general": "一般",
+        "appearance": "外観",
+        "audio": "音声",
         "dictionaries": "辞書",
         "vocabulary": "単語帳",
         "about": "情報",
@@ -27,6 +30,15 @@
         "aboutTitle": "情報",
         "aboutSubtitle": "バージョンとプロジェクト情報",
         "version": "バージョン {{version}}"
+    },
+    "generalSettings": {
+        "subtitle": "言語、検索、基本設定"
+    },
+    "appearanceSettings": {
+        "subtitle": "テーマカラーとフォント"
+    },
+    "audioSettings": {
+        "subtitle": "発音とTTS設定"
     },
     "commonSettings": {
         "title": "一般設定",
