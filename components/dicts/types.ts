@@ -13,6 +13,7 @@ export enum DictID {
   Omw = 'omw',
   Dwds = 'dwds',
   Cambridge = 'cambridge',
+  BingTranslate = 'bingtranslate',
 }
 
 export enum ModuleType {

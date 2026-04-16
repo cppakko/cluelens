@@ -16,6 +16,7 @@ import moegirlIcon from './moegirl/icon.ico';
 import omwIcon from './omw/icon.png';
 import dwdsIcon from './dwds/icon.png';
 import cambridgeIcon from './cambridge/icon.png';
+import bingTranslateIcon from './bingtranslate/icon.png';
 
 export interface DictSearcher {
   search(text: string, options?: SearchOptions): Promise<unknown[]>;
@@ -152,7 +153,15 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
       ],
     },
     type: ModuleType.Dict,
-  }
+  },
+  [DictID.BingTranslate]: {
+    id: DictID.BingTranslate,
+    displayName: 'Bing Translate',
+    displayNameKey: 'dict.bingTranslate',
+    icon: bingTranslateIcon,
+    language: { type: 'all' },
+    type: ModuleType.Translator,
+  },
 };
 
 export const dictMetaList = Object.values(dictMetaMap);

@@ -125,7 +125,8 @@
         "zdic": "汉典",
         "moegirl": "萌娘百科",
         "dwds": "DWDS 德语词典",
-        "cambridge": "剑桥词典"
+        "cambridge": "剑桥词典",
+        "bingTranslate": "必应翻译"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -209,7 +210,10 @@
         "moegirlRequestFailed": "萌娘百科请求失败: {{status}} {{statusText}}",
         "jishoUnexpectedStructure": "意外的 HTML 结构：缺少 #primary 或 #secondary 元素",
         "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}",
-        "cambridgeRequestFailed": "剑桥词典请求失败：{{status}} {{statusText}}"
+        "cambridgeRequestFailed": "剑桥词典请求失败：{{status}} {{statusText}}",
+        "bingTranslateConfigFailed": "获取必应翻译配置失败，请稍后重试。",
+        "bingTranslateRequestFailed": "必应翻译请求失败：{{status}} {{statusText}}",
+        "bingTranslateTextTooLong": "文本过长，最大支持 {{maxLen}} 个字符。"
     },
     "languageOptions": {
         "followBrowser": "跟随浏览器语言"
