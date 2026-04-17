@@ -139,7 +139,8 @@
         "moegirl": "萌娘百科",
         "dwds": "DWDS ドイツ語辞書",
         "cambridge": "ケンブリッジ辞書",
-        "bingTranslate": "Bing 翻訳"
+        "bingTranslate": "Bing 翻訳",
+        "spanishDict": "SpanishDict"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -178,6 +179,11 @@
     },
     "bing": {
         "examples": "例文"
+    },
+    "spanishDictView": {
+        "examples": "例文",
+        "phrases": "フレーズ",
+        "noDirectTranslation": "直接対応する訳語なし"
     },
     "longman": {
         "noEntries": "ロングマンで一致する項目が見つかりませんでした。",
@@ -235,6 +241,7 @@
         "urbanRequestFailed": "Urban Dictionary リクエスト失敗: {{status}} {{statusText}}",
         "greensRequestFailed": "Green's Dictionary リクエスト失敗: {{status}} {{statusText}}",
         "cambridgeRequestFailed": "ケンブリッジ辞書リクエスト失敗: {{status}} {{statusText}}",
+        "spanishDictRequestFailed": "SpanishDict リクエスト失敗: {{status}} {{statusText}}",
         "bingTranslateConfigFailed": "Bing 翻訳の設定取得に失敗しました。しばらくしてから再試行してください。",
         "bingTranslateRequestFailed": "Bing 翻訳リクエスト失敗: {{status}} {{statusText}}",
         "bingTranslateTextTooLong": "テキストが長すぎます。最大文字数は {{maxLen}} です。"

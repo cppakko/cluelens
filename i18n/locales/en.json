@@ -139,7 +139,8 @@
         "omw": "Open Multilingual Wordnet",
         "dwds": "DWDS",
         "cambridge": "Cambridge Dictionary",
-        "bingTranslate": "Bing Translate"
+        "bingTranslate": "Bing Translate",
+        "spanishDict": "SpanishDict"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -178,6 +179,11 @@
     },
     "bing": {
         "examples": "Examples"
+    },
+    "spanishDictView": {
+        "examples": "Examples",
+        "phrases": "Phrases",
+        "noDirectTranslation": "No direct translation"
     },
     "longman": {
         "noEntries": "Unable to find matching entries on Longman.",
@@ -235,6 +241,7 @@
         "urbanRequestFailed": "Urban Dictionary request failed: {{status}} {{statusText}}",
         "greensRequestFailed": "Green's Dictionary request failed: {{status}} {{statusText}}",
         "cambridgeRequestFailed": "Cambridge Dictionary request failed: {{status}} {{statusText}}",
+        "spanishDictRequestFailed": "SpanishDict request failed: {{status}} {{statusText}}",
         "bingTranslateConfigFailed": "Failed to fetch Bing Translate configuration. Please try again later.",
         "bingTranslateRequestFailed": "Bing Translate request failed: {{status}} {{statusText}}",
         "bingTranslateTextTooLong": "Text is too long. Maximum length is {{maxLen}} characters."

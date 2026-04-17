@@ -139,7 +139,8 @@
         "moegirl": "萌娘百科",
         "dwds": "DWDS 德语词典",
         "cambridge": "剑桥词典",
-        "bingTranslate": "必应翻译"
+        "bingTranslate": "必应翻译",
+        "spanishDict": "SpanishDict 西语词典"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -178,6 +179,11 @@
     },
     "bing": {
         "examples": "例句"
+    },
+    "spanishDictView": {
+        "examples": "例句",
+        "phrases": "短语",
+        "noDirectTranslation": "无直接翻译"
     },
     "longman": {
         "noEntries": "未在朗文词典中找到匹配的词条。",
@@ -235,6 +241,7 @@
         "urbanRequestFailed": "Urban Dictionary 请求失败: {{status}} {{statusText}}",
         "greensRequestFailed": "Green's Dictionary 请求失败：{{status}} {{statusText}}",
         "cambridgeRequestFailed": "剑桥词典请求失败：{{status}} {{statusText}}",
+        "spanishDictRequestFailed": "SpanishDict 请求失败：{{status}} {{statusText}}",
         "bingTranslateConfigFailed": "获取必应翻译配置失败，请稍后重试。",
         "bingTranslateRequestFailed": "必应翻译请求失败：{{status}} {{statusText}}",
         "bingTranslateTextTooLong": "文本过长，最大支持 {{maxLen}} 个字符。"

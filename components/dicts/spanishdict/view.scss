@@ -1,0 +1,321 @@
+.spanishdict-result {
+  text-align: left;
+}
+
+.spanishdict-entry {
+  padding: 14px 10px 12px;
+  color: var(--m3-on-surface, #222);
+
+  &+.spanishdict-entry {
+    border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+  }
+}
+
+.spanishdict-entry-header {
+  margin-bottom: 8px;
+}
+
+.spanishdict-entry-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spanishdict-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.spanishdict-meta {
+  margin: 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spanishdict-pos {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--m3-primary, #0b57d0);
+  font-style: italic;
+}
+
+.spanishdict-pron {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+  font-family: serif;
+}
+
+.spanishdict-headword-audio,
+.spanishdict-audio-button {
+  flex-shrink: 0;
+}
+
+.spanishdict-quickdefs {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spanishdict-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--m3-primary, #0b57d0) 8%, transparent);
+}
+
+.spanishdict-chip-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--m3-primary, #0b57d0);
+}
+
+.spanishdict-chip-pron {
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.spanishdict-summary-card {
+  padding: 6px 0 2px;
+}
+
+.spanishdict-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spanishdict-summary-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--m3-on-surface, #222);
+}
+
+.spanishdict-summary-pron {
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #666);
+  font-family: serif;
+}
+
+.spanishdict-senses {
+  margin-top: 8px;
+}
+
+.spanishdict-sense {
+  margin: 8px 0;
+
+  &+.spanishdict-sense {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--m3-outline-variant, #cac4d0);
+  }
+}
+
+.spanishdict-sense-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.spanishdict-sense-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--m3-on-primary, #fff);
+  background: var(--m3-primary, #0b57d0);
+  flex-shrink: 0;
+}
+
+.spanishdict-sense-context {
+  font-size: 13px;
+  color: var(--m3-on-surface-variant, #666);
+  font-style: italic;
+}
+
+.spanishdict-translations {
+  padding-left: 4px;
+}
+
+.spanishdict-translation {
+  margin: 6px 0;
+  padding-left: 8px;
+  border-left: 3px solid color-mix(in srgb, var(--m3-primary, #0b57d0) 30%, transparent);
+}
+
+.spanishdict-trans-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.spanishdict-trans-letter {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.spanishdict-trans-word {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--m3-primary, #0b57d0);
+}
+
+.spanishdict-register {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--m3-on-surface-variant, #666);
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--m3-on-surface-variant, #666) 10%, transparent);
+}
+
+.spanishdict-regions {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.spanishdict-region {
+  font-size: 11px;
+  color: var(--m3-on-surface-variant, #666);
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--m3-on-surface-variant, #666) 8%, transparent);
+}
+
+.spanishdict-examples {
+  margin: 4px 0 2px;
+}
+
+.spanishdict-example {
+  margin: 4px 0;
+  padding-left: 8px;
+}
+
+.spanishdict-audio-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.spanishdict-example-source {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--m3-on-surface, #222);
+  font-style: italic;
+
+  &::before {
+    content: '• ';
+    color: var(--m3-on-surface-variant, #999);
+    font-style: normal;
+  }
+}
+
+.spanishdict-example-target {
+  margin: 1px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--m3-on-surface-variant, #555);
+  padding-left: 10px;
+}
+
+.spanishdict-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+}
+
+.spanishdict-section-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--m3-primary, #0b57d0);
+}
+
+.spanishdict-phrases,
+.spanishdict-standalone-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spanishdict-phrase {
+  display: grid;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+@media (min-width: 520px) {
+  .spanishdict-phrase {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 16px;
+  }
+}
+
+.spanishdict-phrase+.spanishdict-phrase,
+.spanishdict-standalone-example+.spanishdict-standalone-example {
+  border-top: 1px dashed var(--m3-outline-variant, #cac4d0);
+}
+
+.spanishdict-phrase-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spanishdict-audio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.spanishdict-audio-row-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--m3-on-surface, #222);
+}
+
+.spanishdict-audio-row-pron {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.spanishdict-phrase-empty,
+.spanishdict-example-corpus {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--m3-on-surface-variant, #666);
+  background: color-mix(in srgb, var(--m3-on-surface-variant, #666) 10%, transparent);
+}
+
+.spanishdict-standalone-example {
+  padding: 8px 0;
+}
+
+.spanishdict-example-corpus {
+  margin-top: 6px;
+}

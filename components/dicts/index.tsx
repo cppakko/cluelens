@@ -18,6 +18,7 @@ import omwIcon from './omw/icon.png';
 import dwdsIcon from './dwds/icon.png';
 import cambridgeIcon from './cambridge/icon.png';
 import bingTranslateIcon from './bingtranslate/icon.png';
+import spanishDictIcon from './spanishdict/icon.png';
 
 export interface DictSearcher {
   search(text: string, options?: SearchOptions): Promise<unknown[]>;
@@ -171,6 +172,14 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     icon: bingTranslateIcon,
     language: { type: 'all' },
     type: ModuleType.Translator,
+  },
+  [DictID.SpanishDict]: {
+    id: DictID.SpanishDict,
+    displayName: 'SpanishDict',
+    displayNameKey: 'dict.spanishDict',
+    icon: spanishDictIcon,
+    language: { type: 'pairs', pairs: [['en', 'es'], ['es', 'en']] },
+    type: ModuleType.Dict,
   },
 };
 
