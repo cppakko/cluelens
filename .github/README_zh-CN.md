@@ -5,7 +5,7 @@
 <h1 align="center">ClueLens</h1>
 
 <p align="center">
-  一款浏览器词典与翻译扩展，支持快速划词查词、句子翻译以及多源语言参考。
+  一款浏览器词典与翻译扩展，集成 18 个数据源，支持自动语言检测、TTS 发音、生词本和多形态面板工作流。
 </p>
 
 <p align="center">
@@ -21,11 +21,13 @@
 
 ## 功能介绍
 
-- **快速划词翻译**：在任何网页选中文本即可即时查看释义和翻译。
-- **多源支持**：同时支持访问丰富的词典、常规翻译器和AI辅助翻译工具。
-- **语音朗读 (TTS)**：直接在面板中收听单词或句子真实发音音轨或 TTS 语音。
-- **灵活的界面环境**：可根据您的偏好，配置并用作网页内联悬浮窗、浏览器弹窗（Popup）或者侧边栏（Side panel）。
-- **高度定制化**：自由排序、开启/关闭特定的词典和翻译引擎，使其适应您的个人学习/翻译工作流。
+- **18 个查询源并行搜索**：在同一个面板里同时查询 13 个词典、4 个翻译源和 1 个 AI 来源。
+- **自动语言检测**：支持中文、日文、韩文、英文、法文、西班牙文、德文，并自动跳过不匹配的来源。
+- **发音与 TTS**：既可以播放来源自带音频，也可以使用 Web Speech API 或 Lingva，支持预加载和自动播放。
+- **灵活的界面形态**：可用作网页内联悬浮面板、浏览器弹窗（Popup）或侧边栏（Side Panel），并支持右键菜单和快捷键。
+- **生词本**：浏览时可一键保存生词，后续搜索、重新查询，并导出为 JSON 或 CSV。
+- **Material Design 3 主题**：支持主题种子色、明暗模式、色相、色度、色调和字体定制，也支持 Google Fonts 与上海交大镜像切换。
+- **备份与恢复**：可将设置、数据源顺序、生词本以及支持备份的来源配置导出或导入为 JSON。
 
 ## 截图
 
@@ -37,28 +39,36 @@
   <img src="../assets/readme/screenshot.png" alt="ClueLens screenshot" width="640" />
 </p>
 
-## 支持的字典和机翻
+## 支持的数据源
 
 ### 词典
 
 - Bing 词典
-- Jisho (日语)
+- 剑桥词典
 - DictionaryAPI
-- 汉典 (Zdic)
+- DWDS
+- Green's 俚语词典
+- Jisho (日语)
+- Larousse
 - 萌娘百科 (Moegirl)
-- Wiktionary
-- Urban Dictionary
 - Open Multilingual Wordnet
+- SpanishDict
+- Urban Dictionary
+- Wiktionary
+- 汉典 (Zdic)
 
 ### 机翻
 
+- Bing 翻译
 - 彩云小译
-- Google 翻译
 - DeepLx
+- Google 翻译
 
 ### AI
 
-- OpenAI
+- OpenAI（支持官方接口、兼容接口和本地模型）
+
+除 DictionaryAPI、彩云小译、DeepLx 和 OpenAI 外，大多数网页来源都支持在结果卡片中一键打开原始网页。
 
 ## 从商店安装
 
@@ -99,7 +109,11 @@ yarn install
 
 ### 可选环境变量
 
-若需要提供自定义的默认彩云小译 Token，可以创建一个 `.env` 文件进行配置
+若需要预置默认彩云小译 Token，可以创建一个 `.env` 文件进行配置：
+
+```bash
+VITE_CAIYUN_DEFAULT_TOKEN=your-caiyun-token
+```
 
 ### 开发环境运行
 

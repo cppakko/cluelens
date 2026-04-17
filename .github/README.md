@@ -5,7 +5,7 @@
 <h1 align="center">ClueLens</h1>
 
 <p align="center">
-  A browser dictionary and translation extension for quick word lookup, sentence translation, and multi-source language references.
+  A browser dictionary and translation extension with 18 lookup sources, automatic language detection, TTS pronunciation, vocabulary collection, and flexible panel layouts.
 </p>
 
 <p align="center">
@@ -21,11 +21,13 @@
 
 ## Features
 
-- **Quick Word Lookup**: Select text on any web page to instantly view dictionary definitions and translations.
-- **Multi-Source Support**: Access a wide range of dictionaries, conventional translators, and AI-assisted tools simultaneously.
-- **Text-to-Speech (TTS)**: Listen to pronunciations for words and sentences directly from the panel.
-- **Flexible Interface**: Use it as an inline float panel, a browser popup, or a dedicated side panel based on your preference.
-- **Highly Customizable**: Freely reorder, toggle, and configure specific dictionaries and translation engines to fit your workflow.
+- **18 Lookup Sources**: Query 13 dictionaries, 4 translators, and 1 AI source in parallel from a single panel.
+- **Automatic Language Detection**: Detect Chinese, Japanese, Korean, English, French, Spanish, and German to skip incompatible sources automatically.
+- **Pronunciation and TTS**: Play source audio directly or use Web Speech API and Lingva with optional preload and auto-play.
+- **Flexible Surfaces**: Use ClueLens as an inline floating panel, browser popup, or dedicated side panel, with context-menu and keyboard shortcut support.
+- **Vocabulary Book**: Save words while browsing, search them later, reopen lookups, and export them as JSON or CSV.
+- **Material Design 3 Theming**: Customize seed color, dark mode, hue, chroma, tone, and fonts, including Google Fonts and the SJTU mirror.
+- **Backup and Restore**: Export or import settings, enabled source order, vocabulary, and supported per-source configs as JSON.
 
 ## Preview
 
@@ -37,28 +39,36 @@
   <img src="../assets/readme/screenshot.png" alt="ClueLens screenshot" width="640" />
 </p>
 
-## Supported Dictionaries
+## Supported Sources
 
 ### Dictionaries
 
 - Bing Dictionary
-- Jisho
+- Cambridge Dictionary
 - DictionaryAPI
-- Zdic
+- DWDS
+- Green's Dictionary of Slang
+- Jisho
+- Larousse
 - Moegirl
-- Wiktionary
-- Urban Dictionary
 - Open Multilingual Wordnet
+- SpanishDict
+- Urban Dictionary
+- Wiktionary
+- Zdic
 
 ### Translators
 
+- Bing Translate
 - Caiyun Translate
-- Google Translate
 - DeepLx
+- Google Translate
 
 ### AI-Assisted
 
-- OpenAI
+- OpenAI with compatible APIs and local models
+
+Most web-backed sources also expose an open-source-page action directly from the result card. The main exceptions are DictionaryAPI, Caiyun Translate, DeepLx, and OpenAI.
 
 ## Install From Stores
 
@@ -100,6 +110,10 @@ yarn install
 ### Optional environment variables
 
 Create a `.env` file if you want to provide a default Caiyun token:
+
+```bash
+VITE_CAIYUN_DEFAULT_TOKEN=your-caiyun-token
+```
 
 ### Run in development
 
