@@ -6,7 +6,7 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   modules: ['@wxt-dev/module-react', '@wxt-dev/auto-icons'],
   manifest: {
-    version: '0.1.4',
+    version: '0.2.0',
     name: '__MSG_ext_name__',
     description: '__MSG_ext_description__',
     default_locale: 'en',
