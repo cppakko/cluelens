@@ -200,6 +200,17 @@ If the module needs API keys or custom options:
 
 If the module name or settings should be translated, update every language in the i18n folder.
 
+## Source URL (Open in New Tab)
+
+Each dictionary can optionally provide a user-facing URL so users can open the original webpage in a new tab. This is handled by `components/dicts/sourceUrl.ts`.
+
+- `hasDictSourceUrl(dictId)` — returns whether the dict has a user-facing page.
+- `getDictSourceUrl(dictId, text)` — returns the URL for a given search term.
+
+Pure API dictionaries (Caiyun, DeepLX, OpenAI, DictionaryAPI) have no user-facing page and are excluded.
+
+When adding a new dictionary with a user-facing website, add a case in `getDictSourceUrl()` in `sourceUrl.ts` to return the correct URL pattern.
+
 ## Good Examples
 
 - simple translator: `google`

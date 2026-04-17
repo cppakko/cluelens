@@ -3,9 +3,10 @@ import { ReactNode, useCallback, MouseEvent, useState, useRef, useEffect } from 
 import { DictConfig, DictID } from "../dicts/types";
 import { Button } from '../ui/Button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/Accordion';
-import { ChevronsUp, ChevronsDown, Bookmark } from 'lucide-react';
+import { ChevronsUp, ChevronsDown, Bookmark, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { addWord, removeSourceDict } from '@/utils/vocabulary';
+import { hasDictSourceUrl, getDictSourceUrl } from '../dicts/sourceUrl';
 
 const MAX_HEIGHT = 200;
 
@@ -35,6 +36,16 @@ export default function DictItem({ index, children, config, onSearch, searchText
       await addWord(searchText.trim(), config.id as DictID);
     }
   }, [searchText, isSaved, config.id]);
+
+  const handleOpenSourcePage = useCallback(async (e: MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!searchText.trim()) return;
+    const url = await getDictSourceUrl(config.id as DictID, searchText.trim());
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  }, [searchText, config.id]);
 
   const checkHeight = useCallback(() => {
     if (contentRef.current) {
@@ -111,18 +122,33 @@ export default function DictItem({ index, children, config, onSearch, searchText
             {displayName}
           </Text>
           {searchText.trim() && (
-            <button
-              onClick={handleBookmarkClick}
-              className="ml-auto shrink-0 p-1 rounded-full hover:bg-(--m3-primary)/12 transition-colors duration-150"
-              aria-label={isSaved ? t('vocabulary.saved') : t('vocabulary.save')}
-              title={isSaved ? t('vocabulary.saved') : t('vocabulary.save')}
-            >
-              <Bookmark
-                className="size-4"
-                fill={isSaved ? 'currentColor' : 'none'}
-                stroke="currentColor"
-              />
-            </button>
+            <>
+              {hasDictSourceUrl(config.id as DictID) && (
+                <button
+                  onClick={handleOpenSourcePage}
+                  className="ml-auto shrink-0 p-1 rounded-full hover:bg-(--m3-primary)/12 transition-colors duration-150"
+                  aria-label={t('dictItem.openSourcePage')}
+                  title={t('dictItem.openSourcePage')}
+                >
+                  <ExternalLink
+                    className="size-4"
+                    stroke="currentColor"
+                  />
+                </button>
+              )}
+              <button
+                onClick={handleBookmarkClick}
+                className={`${hasDictSourceUrl(config.id as DictID) ? '' : 'ml-auto '}shrink-0 p-1 rounded-full hover:bg-(--m3-primary)/12 transition-colors duration-150`}
+                aria-label={isSaved ? t('vocabulary.saved') : t('vocabulary.save')}
+                title={isSaved ? t('vocabulary.saved') : t('vocabulary.save')}
+              >
+                <Bookmark
+                  className="size-4"
+                  fill={isSaved ? 'currentColor' : 'none'}
+                  stroke="currentColor"
+                />
+              </button>
+            </>
           )}
         </AccordionTrigger>
         <AccordionContent

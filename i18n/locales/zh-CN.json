@@ -16,7 +16,8 @@
     },
     "dictItem": {
         "showMore": "展开更多",
-        "showLess": "收起"
+        "showLess": "收起",
+        "openSourcePage": "打开原始网页"
     },
     "options": {
         "common": "通用",

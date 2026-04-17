@@ -16,7 +16,8 @@
     },
     "dictItem": {
         "showMore": "Show more",
-        "showLess": "Show less"
+        "showLess": "Show less",
+        "openSourcePage": "Open source page"
     },
     "options": {
         "common": "Common",

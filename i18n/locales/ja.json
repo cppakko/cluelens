@@ -16,7 +16,8 @@
     },
     "dictItem": {
         "showMore": "もっと見る",
-        "showLess": "折りたたむ"
+        "showLess": "折りたたむ",
+        "openSourcePage": "元のページを開く"
     },
     "options": {
         "common": "一般",
