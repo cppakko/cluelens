@@ -16,6 +16,7 @@ export enum DictID {
   Cambridge = 'cambridge',
   BingTranslate = 'bingtranslate',
   SpanishDict = 'spanishdict',
+  Larousse = 'larousse',
 }
 
 export enum ModuleType {

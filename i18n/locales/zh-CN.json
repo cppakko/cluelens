@@ -140,7 +140,8 @@
         "dwds": "DWDS 德语词典",
         "cambridge": "剑桥词典",
         "bingTranslate": "必应翻译",
-        "spanishDict": "SpanishDict 西语词典"
+        "spanishDict": "SpanishDict 西语词典",
+        "larousse": "Larousse 法语词典"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -244,7 +245,8 @@
         "spanishDictRequestFailed": "SpanishDict 请求失败：{{status}} {{statusText}}",
         "bingTranslateConfigFailed": "获取必应翻译配置失败，请稍后重试。",
         "bingTranslateRequestFailed": "必应翻译请求失败：{{status}} {{statusText}}",
-        "bingTranslateTextTooLong": "文本过长，最大支持 {{maxLen}} 个字符。"
+        "bingTranslateTextTooLong": "文本过长，最大支持 {{maxLen}} 个字符。",
+        "larousseRequestFailed": "Larousse 请求失败：{{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "跟随浏览器语言"

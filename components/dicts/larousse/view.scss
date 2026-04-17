@@ -1,0 +1,266 @@
+.larousse-result {
+  text-align: left;
+}
+
+.larousse-entry {
+  padding: 14px 10px 12px;
+  color: var(--m3-on-surface, #222);
+  text-align: left;
+}
+
+.larousse-divider {
+  border: none;
+  border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+  margin: 4px 10px;
+}
+
+.larousse-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.larousse-word {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--m3-on-surface, #222);
+}
+
+.larousse-meta {
+  margin: 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.larousse-pos {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--m3-primary, #0b57d0);
+  font-style: italic;
+}
+
+.larousse-etymology {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.larousse-tabs {
+  margin-top: 10px;
+  gap: 0;
+  text-align: left;
+}
+
+.larousse-tabs-list {
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px;
+  row-gap: 3px;
+}
+
+.larousse-tabs-trigger {
+  flex: 0 0 auto;
+  font-size: 12px;
+  padding: 3px 8px;
+  height: 28px;
+}
+
+.larousse-tab-content {
+  padding: 12px 4px 4px;
+  text-align: left;
+}
+
+.larousse-single-section {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.larousse-richtext {
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--m3-on-surface, #222);
+  word-break: break-word;
+  text-align: left;
+}
+
+.larousse-richtext :where(p, ul, ol, dl, table, blockquote) {
+  margin: 0 0 10px;
+}
+
+.larousse-richtext :where(p:last-child, ul:last-child, ol:last-child, dl:last-child, table:last-child, blockquote:last-child) {
+  margin-bottom: 0;
+}
+
+.larousse-richtext :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.larousse-richtext :where(div, p, span, li, dd, dt, td, th) {
+  text-align: left !important;
+}
+
+.larousse-richtext :where(strong, b) {
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+}
+
+.larousse-richtext :where(em, i) {
+  font-style: italic;
+}
+
+.larousse-richtext :where(a) {
+  color: var(--m3-primary, #0b57d0);
+  text-decoration: none;
+}
+
+.larousse-richtext :where(a:hover) {
+  text-decoration: underline;
+}
+
+.larousse-richtext :where(hr) {
+  border: none;
+  border-top: 1px solid var(--m3-outline-variant, #cac4d0);
+  margin: 8px 0;
+}
+
+/* Larousse-specific styling */
+.larousse-richtext .DivisionDefinition {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.larousse-richtext .numDef {
+  font-weight: 600;
+  color: var(--m3-primary, #0b57d0);
+  margin-right: 4px;
+}
+
+.larousse-richtext .indicateurDefinition {
+  font-style: italic;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.larousse-richtext .ExempleDefinition {
+  font-style: italic;
+  color: var(--m3-on-surface-variant, #555);
+}
+
+.larousse-richtext .LibelleSynonyme {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--m3-on-surface-variant, #666);
+  margin: 4px 0 2px;
+}
+
+.larousse-richtext .Synonymes {
+  font-size: 13px;
+  color: var(--m3-on-surface, #222);
+  margin: 0 0 4px;
+}
+
+.larousse-richtext .lienarticle {
+  color: var(--m3-primary, #0b57d0);
+  text-decoration: none;
+}
+
+.larousse-richtext .lienarticle:hover {
+  text-decoration: underline;
+}
+
+/* Expressions */
+.larousse-richtext .Locution {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.larousse-richtext .AdresseLocution {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--m3-on-surface, #222);
+  margin: 0;
+  display: inline;
+}
+
+.larousse-richtext .TexteLocution {
+  font-size: 14px;
+  color: var(--m3-on-surface, #222);
+}
+
+/* Homonymes */
+.larousse-richtext .Homonyme {
+  margin-bottom: 4px;
+  list-style: none;
+}
+
+.larousse-richtext .CatGramHomonyme {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+/* Difficultés */
+.larousse-richtext .Difficulte {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.larousse-richtext .TypeDifficulte {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--m3-primary, #0b57d0);
+  margin: 0 0 4px;
+}
+
+.larousse-richtext .DefinitionDifficulte {
+  font-size: 14px;
+  color: var(--m3-on-surface, #222);
+  margin: 0;
+}
+
+/* Citations */
+.larousse-richtext .Citation {
+  margin-bottom: 14px;
+  list-style: none;
+}
+
+.larousse-richtext .AuteurCitation {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--m3-on-surface, #222);
+}
+
+.larousse-richtext .AdresseCitation {
+  font-weight: 700;
+}
+
+.larousse-richtext .InfoAuteurCitation {
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.larousse-richtext .TexteCitation {
+  display: block;
+  margin: 4px 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--m3-on-surface, #333);
+  line-height: 1.6;
+}
+
+.larousse-richtext .InfoCitation {
+  font-size: 12px;
+  color: var(--m3-on-surface-variant, #666);
+}
+
+.larousse-richtext .ReferenceCitation {
+  font-style: italic;
+}

@@ -140,7 +140,8 @@
         "dwds": "DWDS ドイツ語辞書",
         "cambridge": "ケンブリッジ辞書",
         "bingTranslate": "Bing 翻訳",
-        "spanishDict": "SpanishDict"
+        "spanishDict": "SpanishDict",
+        "larousse": "Larousse フランス語辞書"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -244,7 +245,8 @@
         "spanishDictRequestFailed": "SpanishDict リクエスト失敗: {{status}} {{statusText}}",
         "bingTranslateConfigFailed": "Bing 翻訳の設定取得に失敗しました。しばらくしてから再試行してください。",
         "bingTranslateRequestFailed": "Bing 翻訳リクエスト失敗: {{status}} {{statusText}}",
-        "bingTranslateTextTooLong": "テキストが長すぎます。最大文字数は {{maxLen}} です。"
+        "bingTranslateTextTooLong": "テキストが長すぎます。最大文字数は {{maxLen}} です。",
+        "larousseRequestFailed": "Larousse リクエスト失敗: {{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "ブラウザの言語に従う"

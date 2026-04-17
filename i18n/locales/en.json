@@ -140,7 +140,8 @@
         "dwds": "DWDS",
         "cambridge": "Cambridge Dictionary",
         "bingTranslate": "Bing Translate",
-        "spanishDict": "SpanishDict"
+        "spanishDict": "SpanishDict",
+        "larousse": "Larousse French Dictionary"
     },
     "dictionaryApi": {
         "origin": "Origin",
@@ -244,7 +245,8 @@
         "spanishDictRequestFailed": "SpanishDict request failed: {{status}} {{statusText}}",
         "bingTranslateConfigFailed": "Failed to fetch Bing Translate configuration. Please try again later.",
         "bingTranslateRequestFailed": "Bing Translate request failed: {{status}} {{statusText}}",
-        "bingTranslateTextTooLong": "Text is too long. Maximum length is {{maxLen}} characters."
+        "bingTranslateTextTooLong": "Text is too long. Maximum length is {{maxLen}} characters.",
+        "larousseRequestFailed": "Larousse request failed: {{status}} {{statusText}}"
     },
     "languageOptions": {
         "followBrowser": "Follow browser language"

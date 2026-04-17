@@ -19,6 +19,7 @@ import dwdsIcon from './dwds/icon.png';
 import cambridgeIcon from './cambridge/icon.png';
 import bingTranslateIcon from './bingtranslate/icon.png';
 import spanishDictIcon from './spanishdict/icon.png';
+import larousseIcon from './larousse/icon.ico';
 
 export interface DictSearcher {
   search(text: string, options?: SearchOptions): Promise<unknown[]>;
@@ -179,6 +180,14 @@ export const dictMetaMap: Record<DictID, DictConfig> = {
     displayNameKey: 'dict.spanishDict',
     icon: spanishDictIcon,
     language: { type: 'pairs', pairs: [['en', 'es'], ['es', 'en']] },
+    type: ModuleType.Dict,
+  },
+  [DictID.Larousse]: {
+    id: DictID.Larousse,
+    displayName: 'Larousse',
+    displayNameKey: 'dict.larousse',
+    icon: larousseIcon,
+    language: { type: 'monolingual', languages: ['fr'] },
     type: ModuleType.Dict,
   },
 };
